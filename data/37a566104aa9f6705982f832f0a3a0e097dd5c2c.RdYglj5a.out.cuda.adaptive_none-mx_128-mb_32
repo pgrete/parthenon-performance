@@ -1,0 +1,1160 @@
+PERFORMANCE LOG
+test run
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0            28) util-linux/2.35
+  2) zlib/1.2.11              29) GLib/2.64.1
+  3) binutils/2.34            30) PCRE2/10.34
+  4) GCC/9.3.0                31) libpng/1.6.37
+  5) CUDA/11.0.207            32) expat/2.2.9
+  6) gcccuda/2020a            33) freetype/2.10.1
+  7) numactl/2.0.13           34) fontconfig/2.13.92
+  8) XZ/5.2.5                 35) xorg-macros/1.19.2
+  9) libxml2/2.9.10           36) X11/20200222
+ 10) libpciaccess/0.16        37) DBus/1.13.12
+ 11) hwloc/2.2.0              38) libevent/2.1.11
+ 12) UCX/1.9.0-gcccuda-2020a  39) gzip/1.10
+ 13) OpenMPI/4.0.3            40) lz4/1.9.2
+ 14) git/2.27.0               41) zstd/1.4.4
+ 15) bzip2/1.0.8              42) libdrm/2.4.100
+ 16) ncurses/6.2              43) libglvnd/1.2.0
+ 17) libreadline/8.0          44) libunwind/1.3.1
+ 18) Tcl/8.6.10               45) LLVM/9.0.1
+ 19) SQLite/3.31.1            46) Mesa/20.0.2
+ 20) GMP/6.2.0                47) libGLU/9.0.1
+ 21) libffi/3.3               48) NASM/2.14.02
+ 22) Python/3.8.2             49) libjpeg-turbo/2.0.4
+ 23) Szip/2.1.1               50) NSPR/4.25
+ 24) HDF5/1.12.0              51) NSS/3.51
+ 25) double-conversion/3.1.5  52) snappy/1.1.8
+ 26) gettext/0.20.1           53) JasPer/2.0.14
+ 27) PCRE/8.44                54) Qt5/5.14.1
+
+ 
+
+g++ (GCC) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2020 NVIDIA Corporation
+Built on Thu_Jun_11_22:26:38_PDT_2020
+Cuda compilation tools, release 11.0, V11.0.194
+Build cuda_11.0_bu.TC445_37.28540450_0
+Starting up hydro driver
+
+### WARNING in CheckDesired:
+Parameter file missing desired field <hydro>/cfl
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187766e-03 zone-cycles/wsec = 1.16e+07
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015294e-03 zone-cycles/wsec = 1.30e+08
+cycle=3 time=1.0546864458062346e-02 dt=3.5156214875800207e-03 zone-cycles/wsec = 1.30e+08
+cycle=4 time=1.4062485945642366e-02 dt=3.5156214880400515e-03 zone-cycles/wsec = 1.30e+08
+cycle=5 time=1.7578107433682419e-02 dt=3.5156214886011001e-03 zone-cycles/wsec = 1.29e+08
+cycle=6 time=2.1093728922283519e-02 dt=3.5156214889416706e-03 zone-cycles/wsec = 1.31e+08
+cycle=7 time=2.4609350411225191e-02 dt=3.5156214896218895e-03 zone-cycles/wsec = 1.30e+08
+cycle=8 time=2.8124971900847080e-02 dt=3.5156214898683499e-03 zone-cycles/wsec = 1.30e+08
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03 zone-cycles/wsec = 1.30e+08
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03 zone-cycles/wsec = 1.86e+07
+
+Driver completed.
+time=3.52e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 4.26e-01
+zone-cycles/wallsecond = 4.92e+07
+Starting up hydro driver
+
+### WARNING in CheckDesired:
+Parameter file missing desired field <hydro>/cfl
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187766e-03 zone-cycles/wsec = 3.34e+06
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015294e-03 zone-cycles/wsec = 1.22e+08
+cycle=3 time=1.0546864458062346e-02 dt=3.5156214875800207e-03 zone-cycles/wsec = 1.23e+08
+cycle=4 time=1.4062485945642366e-02 dt=3.5156214880400515e-03 zone-cycles/wsec = 1.22e+08
+cycle=5 time=1.7578107433682419e-02 dt=3.5156214886011001e-03 zone-cycles/wsec = 1.23e+08
+cycle=6 time=2.1093728922283519e-02 dt=3.5156214889416706e-03 zone-cycles/wsec = 1.23e+08
+cycle=7 time=2.4609350411225191e-02 dt=3.5156214896218895e-03 zone-cycles/wsec = 1.24e+08
+cycle=8 time=2.8124971900847080e-02 dt=3.5156214898683499e-03 zone-cycles/wsec = 1.23e+08
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03 zone-cycles/wsec = 1.23e+08
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03 zone-cycles/wsec = 1.80e+07
+
+Driver completed.
+time=3.52e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 8.83e-01
+zone-cycles/wallsecond = 2.38e+07
+
+BEGIN KOKKOS PROFILING REPORT:
+TOTAL TIME: 2.01e+00 seconds
+TOP-DOWN TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <remainder> <kernels per second> <number of calls> <name> [type]
+=================== 
+|-> 7.08e-02 sec 3.5% 100.0% 0.0% ------ 192 "cons"="cons" [copy]
+|-> 6.45e-02 sec 3.2% 33.7% 0.0% 66.3% 5.16e+04 64 SendBoundaryBuffers [region]
+|   |-> 1.48e-02 sec 0.7% 100.0% 0.0% ------ 1664 PackData 4D [for]
+|   |-> 2.81e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 14"="send buf 17" [copy]
+|   |-> 2.80e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 1"="send buf 0" [copy]
+|   |-> 2.78e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 10"="send buf 13" [copy]
+|   |-> 2.71e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 4"="send buf 5" [copy]
+|   |-> 2.69e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 0"="send buf 1" [copy]
+|   |-> 2.69e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 2"="send buf 3" [copy]
+|   |-> 2.67e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 18"="send buf 25" [copy]
+|   |-> 2.66e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 9"="send buf 6" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 5"="send buf 4" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 3"="send buf 2" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 11"="send buf 12" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 16"="send buf 15" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 21"="send buf 22" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 15"="send buf 16" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 19"="send buf 24" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 13"="send buf 10" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 25"="send buf 18" [copy]
+|   |-> 2.64e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 20"="send buf 23" [copy]
+|   |-> 2.64e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 7"="send buf 8" [copy]
+|   |-> 2.64e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 24"="send buf 19" [copy]
+|   |-> 2.63e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 17"="send buf 14" [copy]
+|   |-> 2.63e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 6"="send buf 9" [copy]
+|   |-> 2.63e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 12"="send buf 11" [copy]
+|   |-> 2.63e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 22"="send buf 21" [copy]
+|   |-> 2.62e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 23"="send buf 20" [copy]
+|   |-> 2.62e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 8"="send buf 7" [copy]
+|-> 3.49e-02 sec 1.7% 94.4% 0.0% 0.3% 2.30e+03 20 SetBoundariesInOne [region]
+|   |-> 3.09e-02 sec 1.5% 100.0% 0.0% ------ 20 SetBoundaries [for]
+|   |-> 3.86e-03 sec 0.2% 52.9% 0.0% 47.1% 1.55e+04 20 Create bndinfo array [region]
+|       |-> 1.31e-03 sec 0.1% 100.0% 0.0% ------ 20 "boundary_info"="boundary_info_mirror" [copy]
+|       |-> 4.45e-04 sec 0.0% 100.0% 0.0% ------ 20 Kokkos::View::initialization [boundary_info] [for]
+|       |-> 2.89e-04 sec 0.0% 100.0% 0.0% ------ 20 Kokkos::View::initialization [boundary_info_mirror] [for]
+|-> 2.37e-02 sec 1.2% 80.9% 0.0% 0.7% 3.38e+03 20 SendBoundaryBuffersInOne [region]
+|   |-> 1.68e-02 sec 0.8% 100.0% 0.0% ------ 20 SendBoundaryBuffers [for]
+|   |-> 6.12e-03 sec 0.3% 38.3% 0.0% 61.7% 9.81e+03 20 Create bndinfo array [region]
+|   |   |-> 1.34e-03 sec 0.1% 100.0% 0.0% ------ 20 "boundary_info"="boundary_info_mirror" [copy]
+|   |   |-> 5.29e-04 sec 0.0% 100.0% 0.0% ------ 20 Kokkos::View::initialization [boundary_info_mirror] [for]
+|   |   |-> 4.74e-04 sec 0.0% 100.0% 0.0% ------ 20 Kokkos::View::initialization [boundary_info] [for]
+|   |-> 5.79e-04 sec 0.0% 0.0% 0.0% 100.0% 0.00e+00 20 Set complete and/or start sending via MPI [region]
+|-> 1.50e-02 sec 0.7% 100.0% 0.0% ------ 1664 UnpackData 4D [for]
+|-> 1.39e-02 sec 0.7% 100.0% 0.0% ------ 20 FluxDivergenceMesh [for]
+|-> 1.26e-02 sec 0.6% 100.0% 0.0% ------ 74 EstimateTimestep [reduce]
+|-> 1.15e-02 sec 0.6% 98.9% 0.0% 1.1% 1.74e+03 20 Reconstruct Y [region]
+|   |-> 5.86e-03 sec 0.3% 100.0% 0.0% ------ 10 PLM X2 [for]
+|   |-> 5.54e-03 sec 0.3% 100.0% 0.0% ------ 10 DonorCell X2 [for]
+|-> 1.15e-02 sec 0.6% 98.8% 0.0% 1.2% 1.75e+03 20 Reconstruct X [region]
+|   |-> 5.75e-03 sec 0.3% 100.0% 0.0% ------ 10 PLM X1 [for]
+|   |-> 5.57e-03 sec 0.3% 100.0% 0.0% ------ 10 DonorCell X1 [for]
+|-> 1.14e-02 sec 0.6% 99.0% 0.0% 1.0% 1.75e+03 20 Reconstruct Z [region]
+|   |-> 5.78e-03 sec 0.3% 100.0% 0.0% ------ 10 PLM X3 [for]
+|   |-> 5.52e-03 sec 0.3% 100.0% 0.0% ------ 10 DonorCell X3 [for]
+|-> 1.01e-02 sec 0.5% 98.7% 0.0% 1.3% 1.97e+03 20 Riemann X [region]
+|   |-> 1.00e-02 sec 0.5% 100.0% 0.0% ------ 20 Riemann hydro HLLE [for]
+|-> 9.91e-03 sec 0.5% 99.2% 0.0% 0.8% 2.02e+03 20 Riemann Y [region]
+|   |-> 9.82e-03 sec 0.5% 100.0% 0.0% ------ 20 Riemann hydro HLLE [for]
+|-> 9.87e-03 sec 0.5% 99.2% 0.0% 0.8% 2.03e+03 20 Riemann Z [region]
+|   |-> 9.79e-03 sec 0.5% 100.0% 0.0% ------ 20 Riemann hydro HLLE [for]
+|-> 9.54e-03 sec 0.5% 100.0% 0.0% ------ 1408 Kokkos::View::initialization [MakeFluxPack::sparse_assoc] [for]
+|-> 9.47e-03 sec 0.5% 100.0% 0.0% ------ 20 UpdateMeshData [for]
+|-> 8.81e-03 sec 0.4% 100.0% 0.0% ------ 84 ConservedToPrimitive [for]
+|-> 8.64e-03 sec 0.4% 100.0% 0.0% ------ 1152 Kokkos::View::initialization [MakePack::cv] [for]
+|-> 7.07e-03 sec 0.4% 100.0% 0.0% ------ 1152 Kokkos::View::destruction [MakePack::cv] [for]
+|-> 6.65e-03 sec 0.3% 100.0% 0.0% ------ 704 "MakeFluxPack::sparse_assoc"="MakeFluxPack::sparse_assoc" [copy]
+|-> 6.14e-03 sec 0.3% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons scratch] [for]
+|-> 5.44e-03 sec 0.3% 100.0% 0.0% ------ 576 "MakePack::cv"="MakePack::cv" [copy]
+|-> 3.88e-03 sec 0.2% 100.0% 0.0% ------ 192 Kokkos::View::initialization [prim] [for]
+|-> 3.88e-03 sec 0.2% 100.0% 0.0% ------ 192 Kokkos::View::initialization [cons] [for]
+|-> 1.86e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::initialization [MakeFluxPack::cv] [for]
+|-> 1.81e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::destruction [MakeFluxPack::f3] [for]
+|-> 1.79e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::initialization [MakeFluxPack::f1] [for]
+|-> 1.77e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::initialization [MakeFluxPack::f2] [for]
+|-> 1.75e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::initialization [MakeFluxPack::f3] [for]
+|-> 1.54e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::destruction [MakeFluxPack::cv] [for]
+|-> 1.53e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::destruction [MakeFluxPack::f2] [for]
+|-> 1.50e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::destruction [MakeFluxPack::f1] [for]
+|-> 1.24e-03 sec 0.1% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX3] [for]
+|-> 1.24e-03 sec 0.1% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX1] [for]
+|-> 1.24e-03 sec 0.1% 100.0% 0.0% ------ 64 Kokkos::View::initialization [wr] [for]
+|-> 1.24e-03 sec 0.1% 100.0% 0.0% ------ 64 Kokkos::View::initialization [wl] [for]
+|-> 1.24e-03 sec 0.1% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX2] [for]
+|-> 1.21e-03 sec 0.1% 100.0% 0.0% ------ 128 "MakeFluxPack::cv"="MakeFluxPack::cv" [copy]
+|-> 1.19e-03 sec 0.1% 100.0% 0.0% ------ 128 "MakeFluxPack::f1"="MakeFluxPack::f1" [copy]
+|-> 1.19e-03 sec 0.1% 100.0% 0.0% ------ 128 "MakeFluxPack::f2"="MakeFluxPack::f2" [copy]
+|-> 1.18e-03 sec 0.1% 100.0% 0.0% ------ 128 "MakeFluxPack::f3"="MakeFluxPack::f3" [copy]
+|-> 9.57e-04 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::destruction [boundary_info_mirror] [for]
+|-> 8.95e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:187] [for]
+|-> 8.36e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 0] [for]
+|-> 7.95e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:188] [for]
+|-> 7.91e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:191] [for]
+|-> 7.90e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 0] [for]
+|-> 7.82e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 4] [for]
+|-> 7.81e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:190] [for]
+|-> 7.79e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 3] [for]
+|-> 7.76e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 1] [for]
+|-> 7.73e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:192] [for]
+|-> 7.72e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 5] [for]
+|-> 7.72e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 1] [for]
+|-> 7.68e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 10] [for]
+|-> 7.66e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 9] [for]
+|-> 7.65e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 13] [for]
+|-> 7.64e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 3] [for]
+|-> 7.64e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:193] [for]
+|-> 7.64e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 2] [for]
+|-> 7.63e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 6] [for]
+|-> 7.62e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 2] [for]
+|-> 7.62e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 14] [for]
+|-> 7.61e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 4] [for]
+|-> 7.61e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 7] [for]
+|-> 7.60e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 21] [for]
+|-> 7.60e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 7] [for]
+|-> 7.59e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 10] [for]
+|-> 7.58e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 11] [for]
+|-> 7.58e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 8] [for]
+|-> 7.58e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 20] [for]
+|-> 7.58e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 6] [for]
+|-> 7.58e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 22] [for]
+|-> 7.57e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 5] [for]
+|-> 7.57e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 12] [for]
+|-> 7.56e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 11] [for]
+|-> 7.56e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 23] [for]
+|-> 7.55e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 14] [for]
+|-> 7.55e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 13] [for]
+|-> 7.54e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 9] [for]
+|-> 7.54e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 18] [for]
+|-> 7.54e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 15] [for]
+|-> 7.54e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 8] [for]
+|-> 7.53e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 21] [for]
+|-> 7.52e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 24] [for]
+|-> 7.51e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 15] [for]
+|-> 7.51e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 17] [for]
+|-> 7.50e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 16] [for]
+|-> 7.50e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 22] [for]
+|-> 7.50e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 16] [for]
+|-> 7.50e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 23] [for]
+|-> 7.50e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 19] [for]
+|-> 7.49e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 17] [for]
+|-> 7.49e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 18] [for]
+|-> 7.49e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 20] [for]
+|-> 7.48e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 25] [for]
+|-> 7.48e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 24] [for]
+|-> 7.46e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 12] [for]
+|-> 7.45e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 19] [for]
+|-> 7.44e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 25] [for]
+|-> 5.05e-04 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::destruction [boundary_info] [for]
+|-> 2.63e-04 sec 0.0% 100.0% 0.0% ------ 11 Kokkos::View::initialization [MeshData::PackVariables::packs] [for]
+|-> 2.40e-04 sec 0.0% 100.0% 0.0% ------ 11 Kokkos::View::initialization [MeshData::PackVariables::coords] [for]
+
+BOTTOM-UP TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <number of calls> <name> [type]
+=================== 
+|-> 7.08e-02 sec 3.5% 100.0% 0.0% ------ 192 "cons"="cons" [copy]
+|-> 4.28e-02 sec 2.1% 0.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 3.09e-02 sec 1.5% 100.0% 0.0% ------ 20 SetBoundaries [for]
+|   |-> 3.09e-02 sec 1.5% 100.0% 0.0% 0.0% 0.00e+00 20 SetBoundariesInOne [region]
+|-> 2.96e-02 sec 1.5% 100.0% 0.0% ------ 60 Riemann hydro HLLE [for]
+|   |-> 1.00e-02 sec 0.5% 100.0% 0.0% 0.0% 0.00e+00 20 Riemann X [region]
+|   |-> 9.82e-03 sec 0.5% 100.0% 0.0% 0.0% 0.00e+00 20 Riemann Y [region]
+|   |-> 9.79e-03 sec 0.5% 100.0% 0.0% 0.0% 0.00e+00 20 Riemann Z [region]
+|-> 1.68e-02 sec 0.8% 100.0% 0.0% ------ 20 SendBoundaryBuffers [for]
+|   |-> 1.68e-02 sec 0.8% 100.0% 0.0% 0.0% 0.00e+00 20 SendBoundaryBuffersInOne [region]
+|-> 1.50e-02 sec 0.7% 100.0% 0.0% ------ 1664 UnpackData 4D [for]
+|-> 1.48e-02 sec 0.7% 100.0% 0.0% ------ 1664 PackData 4D [for]
+|   |-> 1.48e-02 sec 0.7% 100.0% 0.0% 0.0% 0.00e+00 1664 SendBoundaryBuffers [region]
+|-> 1.39e-02 sec 0.7% 100.0% 0.0% ------ 20 FluxDivergenceMesh [for]
+|-> 1.26e-02 sec 0.6% 100.0% 0.0% ------ 74 EstimateTimestep [reduce]
+|-> 9.54e-03 sec 0.5% 100.0% 0.0% ------ 1408 Kokkos::View::initialization [MakeFluxPack::sparse_assoc] [for]
+|-> 9.47e-03 sec 0.5% 100.0% 0.0% ------ 20 UpdateMeshData [for]
+|-> 8.81e-03 sec 0.4% 100.0% 0.0% ------ 84 ConservedToPrimitive [for]
+|-> 8.64e-03 sec 0.4% 100.0% 0.0% ------ 1152 Kokkos::View::initialization [MakePack::cv] [for]
+|-> 7.07e-03 sec 0.4% 100.0% 0.0% ------ 1152 Kokkos::View::destruction [MakePack::cv] [for]
+|-> 6.65e-03 sec 0.3% 100.0% 0.0% ------ 704 "MakeFluxPack::sparse_assoc"="MakeFluxPack::sparse_assoc" [copy]
+|-> 6.14e-03 sec 0.3% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons scratch] [for]
+|-> 5.86e-03 sec 0.3% 100.0% 0.0% ------ 10 PLM X2 [for]
+|   |-> 5.86e-03 sec 0.3% 100.0% 0.0% 0.0% 0.00e+00 10 Reconstruct Y [region]
+|-> 5.78e-03 sec 0.3% 100.0% 0.0% ------ 10 PLM X3 [for]
+|   |-> 5.78e-03 sec 0.3% 100.0% 0.0% 0.0% 0.00e+00 10 Reconstruct Z [region]
+|-> 5.75e-03 sec 0.3% 100.0% 0.0% ------ 10 PLM X1 [for]
+|   |-> 5.75e-03 sec 0.3% 100.0% 0.0% 0.0% 0.00e+00 10 Reconstruct X [region]
+|-> 5.60e-03 sec 0.3% 0.0% 0.0% 0.0% 0.00e+00 40 Create bndinfo array [region]
+|   |-> 3.78e-03 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 20 SendBoundaryBuffersInOne [region]
+|   |-> 1.82e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 20 SetBoundariesInOne [region]
+|-> 5.57e-03 sec 0.3% 100.0% 0.0% ------ 10 DonorCell X1 [for]
+|   |-> 5.57e-03 sec 0.3% 100.0% 0.0% 0.0% 0.00e+00 10 Reconstruct X [region]
+|-> 5.54e-03 sec 0.3% 100.0% 0.0% ------ 10 DonorCell X2 [for]
+|   |-> 5.54e-03 sec 0.3% 100.0% 0.0% 0.0% 0.00e+00 10 Reconstruct Y [region]
+|-> 5.52e-03 sec 0.3% 100.0% 0.0% ------ 10 DonorCell X3 [for]
+|   |-> 5.52e-03 sec 0.3% 100.0% 0.0% 0.0% 0.00e+00 10 Reconstruct Z [region]
+|-> 5.44e-03 sec 0.3% 100.0% 0.0% ------ 576 "MakePack::cv"="MakePack::cv" [copy]
+|-> 3.88e-03 sec 0.2% 100.0% 0.0% ------ 192 Kokkos::View::initialization [prim] [for]
+|-> 3.88e-03 sec 0.2% 100.0% 0.0% ------ 192 Kokkos::View::initialization [cons] [for]
+|-> 2.65e-03 sec 0.1% 100.0% 0.0% ------ 40 "boundary_info"="boundary_info_mirror" [copy]
+|   |-> 2.65e-03 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 40 Create bndinfo array [region]
+|       |-> 1.34e-03 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 20 SendBoundaryBuffersInOne [region]
+|       |-> 1.31e-03 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 20 SetBoundariesInOne [region]
+|-> 1.86e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::initialization [MakeFluxPack::cv] [for]
+|-> 1.81e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::destruction [MakeFluxPack::f3] [for]
+|-> 1.79e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::initialization [MakeFluxPack::f1] [for]
+|-> 1.77e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::initialization [MakeFluxPack::f2] [for]
+|-> 1.75e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::initialization [MakeFluxPack::f3] [for]
+|-> 1.54e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::destruction [MakeFluxPack::cv] [for]
+|-> 1.53e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::destruction [MakeFluxPack::f2] [for]
+|-> 1.50e-03 sec 0.1% 100.0% 0.0% ------ 256 Kokkos::View::destruction [MakeFluxPack::f1] [for]
+|-> 1.24e-03 sec 0.1% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX3] [for]
+|-> 1.24e-03 sec 0.1% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX1] [for]
+|-> 1.24e-03 sec 0.1% 100.0% 0.0% ------ 64 Kokkos::View::initialization [wr] [for]
+|-> 1.24e-03 sec 0.1% 100.0% 0.0% ------ 64 Kokkos::View::initialization [wl] [for]
+|-> 1.24e-03 sec 0.1% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX2] [for]
+|-> 1.21e-03 sec 0.1% 100.0% 0.0% ------ 128 "MakeFluxPack::cv"="MakeFluxPack::cv" [copy]
+|-> 1.19e-03 sec 0.1% 100.0% 0.0% ------ 128 "MakeFluxPack::f1"="MakeFluxPack::f1" [copy]
+|-> 1.19e-03 sec 0.1% 100.0% 0.0% ------ 128 "MakeFluxPack::f2"="MakeFluxPack::f2" [copy]
+|-> 1.18e-03 sec 0.1% 100.0% 0.0% ------ 128 "MakeFluxPack::f3"="MakeFluxPack::f3" [copy]
+|-> 9.57e-04 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::destruction [boundary_info_mirror] [for]
+|-> 9.19e-04 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::initialization [boundary_info] [for]
+|   |-> 9.19e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 40 Create bndinfo array [region]
+|       |-> 4.74e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 SendBoundaryBuffersInOne [region]
+|       |-> 4.45e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 SetBoundariesInOne [region]
+|-> 8.95e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:187] [for]
+|-> 8.36e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 0] [for]
+|-> 8.18e-04 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::initialization [boundary_info_mirror] [for]
+|   |-> 8.18e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 40 Create bndinfo array [region]
+|       |-> 5.29e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 SendBoundaryBuffersInOne [region]
+|       |-> 2.89e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 SetBoundariesInOne [region]
+|-> 7.95e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:188] [for]
+|-> 7.91e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:191] [for]
+|-> 7.90e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 0] [for]
+|-> 7.82e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 4] [for]
+|-> 7.81e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:190] [for]
+|-> 7.79e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 3] [for]
+|-> 7.76e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 1] [for]
+|-> 7.73e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:192] [for]
+|-> 7.72e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 5] [for]
+|-> 7.72e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 1] [for]
+|-> 7.68e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 10] [for]
+|-> 7.66e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 9] [for]
+|-> 7.65e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 13] [for]
+|-> 7.64e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 3] [for]
+|-> 7.64e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [ParArrayNDGeneric:/mnt/home/gretephi/src/athenapk-performance/external/parthenon/src/reconstruct/reconstruction.cpp:193] [for]
+|-> 7.64e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 2] [for]
+|-> 7.63e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 6] [for]
+|-> 7.62e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 2] [for]
+|-> 7.62e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 14] [for]
+|-> 7.61e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 4] [for]
+|-> 7.61e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 7] [for]
+|-> 7.60e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 21] [for]
+|-> 7.60e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 7] [for]
+|-> 7.59e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 10] [for]
+|-> 7.58e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 11] [for]
+|-> 7.58e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 8] [for]
+|-> 7.58e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 20] [for]
+|-> 7.58e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 6] [for]
+|-> 7.58e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 22] [for]
+|-> 7.57e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 5] [for]
+|-> 7.57e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 12] [for]
+|-> 7.56e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 11] [for]
+|-> 7.56e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 23] [for]
+|-> 7.55e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 14] [for]
+|-> 7.55e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 13] [for]
+|-> 7.54e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 9] [for]
+|-> 7.54e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 18] [for]
+|-> 7.54e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 15] [for]
+|-> 7.54e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 8] [for]
+|-> 7.53e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 21] [for]
+|-> 7.52e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 24] [for]
+|-> 7.51e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 15] [for]
+|-> 7.51e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 17] [for]
+|-> 7.50e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 16] [for]
+|-> 7.50e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 22] [for]
+|-> 7.50e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 16] [for]
+|-> 7.50e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 23] [for]
+|-> 7.50e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 19] [for]
+|-> 7.49e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 17] [for]
+|-> 7.49e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 18] [for]
+|-> 7.49e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 20] [for]
+|-> 7.48e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 25] [for]
+|-> 7.48e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 24] [for]
+|-> 7.46e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 12] [for]
+|-> 7.45e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 19] [for]
+|-> 7.44e-04 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 25] [for]
+|-> 5.79e-04 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 Set complete and/or start sending via MPI [region]
+|   |-> 5.79e-04 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 SendBoundaryBuffersInOne [region]
+|-> 5.05e-04 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::destruction [boundary_info] [for]
+|-> 2.81e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 14"="send buf 17" [copy]
+|   |-> 2.81e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.80e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 1"="send buf 0" [copy]
+|   |-> 2.80e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.78e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 10"="send buf 13" [copy]
+|   |-> 2.78e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.71e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 4"="send buf 5" [copy]
+|   |-> 2.71e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.69e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 0"="send buf 1" [copy]
+|   |-> 2.69e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.69e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 2"="send buf 3" [copy]
+|   |-> 2.69e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.67e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 18"="send buf 25" [copy]
+|   |-> 2.67e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.66e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 9"="send buf 6" [copy]
+|   |-> 2.66e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 5"="send buf 4" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 3"="send buf 2" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 11"="send buf 12" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 16"="send buf 15" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 21"="send buf 22" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 15"="send buf 16" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 19"="send buf 24" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 13"="send buf 10" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.65e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 25"="send buf 18" [copy]
+|   |-> 2.65e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.64e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 20"="send buf 23" [copy]
+|   |-> 2.64e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.64e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 7"="send buf 8" [copy]
+|   |-> 2.64e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.64e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 24"="send buf 19" [copy]
+|   |-> 2.64e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.63e-04 sec 0.0% 100.0% 0.0% ------ 11 Kokkos::View::initialization [MeshData::PackVariables::packs] [for]
+|-> 2.63e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 17"="send buf 14" [copy]
+|   |-> 2.63e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.63e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 6"="send buf 9" [copy]
+|   |-> 2.63e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.63e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 12"="send buf 11" [copy]
+|   |-> 2.63e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.63e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 22"="send buf 21" [copy]
+|   |-> 2.63e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.62e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 23"="send buf 20" [copy]
+|   |-> 2.62e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.62e-04 sec 0.0% 100.0% 0.0% ------ 64 "recv buf 8"="send buf 7" [copy]
+|   |-> 2.62e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 64 SendBoundaryBuffers [region]
+|-> 2.40e-04 sec 0.0% 100.0% 0.0% ------ 11 Kokkos::View::initialization [MeshData::PackVariables::coords] [for]
+
+KOKKOS HOST SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 3645.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+  50.0% cons scratch
+  50.0% cons
+
+KOKKOS CUDA SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 1353425.5 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+
+Host process high water mark memory consumption: 154184 kB
+
+END KOKKOS PROFILING REPORT.
