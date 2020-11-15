@@ -1,0 +1,188 @@
+PERFORMANCE LOG
+using const refs
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0            28) util-linux/2.35
+  2) zlib/1.2.11              29) GLib/2.64.1
+  3) binutils/2.34            30) PCRE2/10.34
+  4) GCC/9.3.0                31) libpng/1.6.37
+  5) CUDA/11.0.207            32) expat/2.2.9
+  6) gcccuda/2020a            33) freetype/2.10.1
+  7) numactl/2.0.13           34) fontconfig/2.13.92
+  8) XZ/5.2.5                 35) xorg-macros/1.19.2
+  9) libxml2/2.9.10           36) X11/20200222
+ 10) libpciaccess/0.16        37) DBus/1.13.12
+ 11) hwloc/2.2.0              38) libevent/2.1.11
+ 12) UCX/1.9.0-gcccuda-2020a  39) gzip/1.10
+ 13) OpenMPI/4.0.3            40) lz4/1.9.2
+ 14) git/2.27.0               41) zstd/1.4.4
+ 15) bzip2/1.0.8              42) libdrm/2.4.100
+ 16) ncurses/6.2              43) libglvnd/1.2.0
+ 17) libreadline/8.0          44) libunwind/1.3.1
+ 18) Tcl/8.6.10               45) LLVM/9.0.1
+ 19) SQLite/3.31.1            46) Mesa/20.0.2
+ 20) GMP/6.2.0                47) libGLU/9.0.1
+ 21) libffi/3.3               48) NASM/2.14.02
+ 22) Python/3.8.2             49) libjpeg-turbo/2.0.4
+ 23) Szip/2.1.1               50) NSPR/4.25
+ 24) HDF5/1.12.0              51) NSS/3.51
+ 25) double-conversion/3.1.5  52) snappy/1.1.8
+ 26) gettext/0.20.1           53) JasPer/2.0.14
+ 27) PCRE/8.44                54) Qt5/5.14.1
+
+ 
+
+g++ (GCC) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2020 NVIDIA Corporation
+Built on Thu_Jun_11_22:26:38_PDT_2020
+Cuda compilation tools, release 11.0, V11.0.194
+Build cuda_11.0_bu.TC445_37.28540450_0
+Starting up hydro driver
+
+### WARNING in CheckDesired:
+Parameter file missing desired field <hydro>/cfl
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187766e-03 zone-cycles/wsec = 1.95e+06
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015294e-03 zone-cycles/wsec = 3.19e+07
+cycle=3 time=1.0546864458062346e-02 dt=3.5156214875800207e-03 zone-cycles/wsec = 2.88e+07
+cycle=4 time=1.4062485945642366e-02 dt=3.5156214880400515e-03 zone-cycles/wsec = 3.01e+07
+cycle=5 time=1.7578107433682419e-02 dt=3.5156214886011001e-03 zone-cycles/wsec = 2.95e+07
+cycle=6 time=2.1093728922283519e-02 dt=3.5156214889416706e-03 zone-cycles/wsec = 2.99e+07
+cycle=7 time=2.4609350411225191e-02 dt=3.5156214896218895e-03 zone-cycles/wsec = 2.93e+07
+cycle=8 time=2.8124971900847080e-02 dt=3.5156214898683499e-03 zone-cycles/wsec = 3.07e+07
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03 zone-cycles/wsec = 2.94e+07
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03 zone-cycles/wsec = 1.03e+07
+
+Driver completed.
+time=3.52e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 1.87e+00
+zone-cycles/wallsecond = 1.12e+07
+Starting up hydro driver
+
+### WARNING in CheckDesired:
+Parameter file missing desired field <hydro>/cfl
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187766e-03 zone-cycles/wsec = 2.24e+04
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015294e-03 zone-cycles/wsec = 2.89e+07
+cycle=3 time=1.0546864458062346e-02 dt=3.5156214875800207e-03 zone-cycles/wsec = 2.93e+07
+cycle=4 time=1.4062485945642366e-02 dt=3.5156214880400515e-03 zone-cycles/wsec = 2.94e+07
+cycle=5 time=1.7578107433682419e-02 dt=3.5156214886011001e-03 zone-cycles/wsec = 2.71e+07
+cycle=6 time=2.1093728922283519e-02 dt=3.5156214889416706e-03 zone-cycles/wsec = 2.92e+07
+cycle=7 time=2.4609350411225191e-02 dt=3.5156214896218895e-03 zone-cycles/wsec = 2.93e+07
+cycle=8 time=2.8124971900847080e-02 dt=3.5156214898683499e-03 zone-cycles/wsec = 2.64e+07
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03 zone-cycles/wsec = 2.78e+07
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03 zone-cycles/wsec = 9.56e+06
+
+Driver completed.
+time=3.52e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 9.44e+01
+zone-cycles/wallsecond = 2.22e+05
+
+BEGIN KOKKOS PROFILING REPORT:
+TOTAL TIME: 1.87e+02 seconds
+TOP-DOWN TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <remainder> <kernels per second> <number of calls> <name> [type]
+=================== 
+|-> 6.92e-01 sec 0.4% 37.8% 0.0% 62.2% 3.85e+04 512 SendBoundaryBuffers [region]
+|   |-> 1.85e-01 sec 0.1% 100.0% 0.0% ------ 13312 PackData 4D [for]
+|-> 1.82e-01 sec 0.1% 100.0% 0.0% ------ 13312 UnpackData 4D [for]
+|-> 1.79e-01 sec 0.1% 36.5% 0.0% 0.2% 4.46e+02 20 SendBoundaryBuffersInOne [region]
+|   |-> 1.17e-01 sec 0.1% 17.3% 0.0% 82.7% 5.15e+02 20 Create bndinfo array [region]
+|   |-> 4.53e-02 sec 0.0% 100.0% 0.0% ------ 20 SendBoundaryBuffers [for]
+|-> 1.66e-01 sec 0.1% 100.0% 0.0% ------ 11264 Kokkos::View::initialization [MakeFluxPack::sparse_assoc] [for]
+|-> 1.55e-01 sec 0.1% 100.0% 0.0% ------ 9216 Kokkos::View::initialization [MakePack::cv] [for]
+|-> 1.41e-01 sec 0.1% 68.4% 0.0% 0.2% 5.68e+02 20 SetBoundariesInOne [region]
+|   |-> 7.82e-02 sec 0.0% 100.0% 0.0% ------ 20 SetBoundaries [for]
+|   |-> 6.24e-02 sec 0.0% 29.1% 0.0% 70.9% 9.61e+02 20 Create bndinfo array [region]
+|-> 1.36e-01 sec 0.1% 100.0% 0.0% ------ 1536 "cons"="cons" [copy]
+|-> 8.93e-02 sec 0.0% 100.0% 0.0% ------ 522 EstimateTimestep [reduce]
+|-> 7.73e-02 sec 0.0% 100.0% 0.0% ------ 9216 Kokkos::View::destruction [MakePack::cv] [for]
+|-> 5.93e-02 sec 0.0% 100.0% 0.0% ------ 5632 "MakeFluxPack::sparse_assoc"="MakeFluxPack::sparse_assoc" [copy]
+|-> 5.55e-02 sec 0.0% 100.0% 0.0% ------ 4608 "MakePack::cv"="MakePack::cv" [copy]
+|-> 5.45e-02 sec 0.0% 100.0% 0.0% ------ 1536 Kokkos::View::initialization [cons] [for]
+|-> 5.43e-02 sec 0.0% 100.0% 0.0% ------ 1536 Kokkos::View::initialization [prim] [for]
+|-> 4.25e-02 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::destruction [boundary_info_mirror] [for]
+|-> 3.72e-02 sec 0.0% 100.0% 0.0% ------ 20 FluxDivergenceMesh [for]
+|-> 3.07e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::cv] [for]
+|-> 2.93e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f1] [for]
+|-> 2.91e-02 sec 0.0% 100.0% 0.0% ------ 20 UpdateMeshData [for]
+|-> 2.91e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f2] [for]
+|-> 2.89e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f3] [for]
+|-> 2.71e-02 sec 0.0% 100.0% 0.0% ------ 532 ConservedToPrimitive [for]
+|-> 2.70e-02 sec 0.0% 99.4% 0.0% 0.6% 7.40e+02 20 Reconstruct Z [region]
+|-> 2.49e-02 sec 0.0% 99.2% 0.0% 0.8% 8.02e+02 20 Reconstruct Y [region]
+|-> 2.46e-02 sec 0.0% 99.0% 0.0% 1.0% 8.12e+02 20 Reconstruct X [region]
+|-> 2.17e-02 sec 0.0% 99.1% 0.0% 0.9% 9.22e+02 20 Riemann X [region]
+|   |-> 2.15e-02 sec 0.0% 100.0% 0.0% ------ 20 Riemann hydro HLLE [for]
+|-> 2.12e-02 sec 0.0% 99.5% 0.0% 0.5% 9.43e+02 20 Riemann Z [region]
+|   |-> 2.11e-02 sec 0.0% 100.0% 0.0% ------ 20 Riemann hydro HLLE [for]
+|-> 2.10e-02 sec 0.0% 99.5% 0.0% 0.5% 9.52e+02 20 Riemann Y [region]
+|   |-> 2.09e-02 sec 0.0% 100.0% 0.0% ------ 20 Riemann hydro HLLE [for]
+
+BOTTOM-UP TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <number of calls> <name> [type]
+=================== 
+|-> 4.30e-01 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 512 SendBoundaryBuffers [region]
+|-> 1.85e-01 sec 0.1% 100.0% 0.0% ------ 13312 PackData 4D [for]
+|   |-> 1.85e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 13312 SendBoundaryBuffers [region]
+|-> 1.82e-01 sec 0.1% 100.0% 0.0% ------ 13312 UnpackData 4D [for]
+|-> 1.66e-01 sec 0.1% 100.0% 0.0% ------ 11264 Kokkos::View::initialization [MakeFluxPack::sparse_assoc] [for]
+|-> 1.55e-01 sec 0.1% 100.0% 0.0% ------ 9216 Kokkos::View::initialization [MakePack::cv] [for]
+|-> 1.41e-01 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 40 Create bndinfo array [region]
+|   |-> 9.64e-02 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 20 SendBoundaryBuffersInOne [region]
+|   |-> 4.42e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 SetBoundariesInOne [region]
+|-> 1.36e-01 sec 0.1% 100.0% 0.0% ------ 1536 "cons"="cons" [copy]
+|-> 8.93e-02 sec 0.0% 100.0% 0.0% ------ 522 EstimateTimestep [reduce]
+|-> 7.82e-02 sec 0.0% 100.0% 0.0% ------ 20 SetBoundaries [for]
+|   |-> 7.82e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 SetBoundariesInOne [region]
+|-> 7.73e-02 sec 0.0% 100.0% 0.0% ------ 9216 Kokkos::View::destruction [MakePack::cv] [for]
+|-> 6.35e-02 sec 0.0% 100.0% 0.0% ------ 60 Riemann hydro HLLE [for]
+|   |-> 2.15e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 Riemann X [region]
+|   |-> 2.11e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 Riemann Z [region]
+|   |-> 2.09e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 Riemann Y [region]
+|-> 5.93e-02 sec 0.0% 100.0% 0.0% ------ 5632 "MakeFluxPack::sparse_assoc"="MakeFluxPack::sparse_assoc" [copy]
+|-> 5.55e-02 sec 0.0% 100.0% 0.0% ------ 4608 "MakePack::cv"="MakePack::cv" [copy]
+|-> 5.45e-02 sec 0.0% 100.0% 0.0% ------ 1536 Kokkos::View::initialization [cons] [for]
+|-> 5.43e-02 sec 0.0% 100.0% 0.0% ------ 1536 Kokkos::View::initialization [prim] [for]
+|-> 4.53e-02 sec 0.0% 100.0% 0.0% ------ 20 SendBoundaryBuffers [for]
+|   |-> 4.53e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 SendBoundaryBuffersInOne [region]
+|-> 4.25e-02 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::destruction [boundary_info_mirror] [for]
+|-> 3.72e-02 sec 0.0% 100.0% 0.0% ------ 20 FluxDivergenceMesh [for]
+|-> 3.07e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::cv] [for]
+|-> 2.93e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f1] [for]
+|-> 2.91e-02 sec 0.0% 100.0% 0.0% ------ 20 UpdateMeshData [for]
+|-> 2.91e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f2] [for]
+|-> 2.89e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f3] [for]
+|-> 2.71e-02 sec 0.0% 100.0% 0.0% ------ 532 ConservedToPrimitive [for]
+
+KOKKOS HOST SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 1568.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+  100.0% SendBoundaryBuffersInOne/Create bndinfo array/boundary_info_mirror
+
+KOKKOS CUDA SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 1922316.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+
+Host process high water mark memory consumption: 238352 kB
+
+END KOKKOS PROFILING REPORT.
