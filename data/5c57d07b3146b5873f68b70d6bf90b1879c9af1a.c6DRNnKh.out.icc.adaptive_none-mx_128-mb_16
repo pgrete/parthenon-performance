@@ -1,0 +1,147 @@
+PERFORMANCE LOG
+no MeshBlockPakcs
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0         5) numactl/2.0.13    9) intel/2020a
+  2) zlib/1.2.11           6) UCX/1.8.0        10) git/2.27.0
+  3) binutils/2.34         7) impi/2019.7.217
+  4) iccifort/2020.1.217   8) imkl/2020.1.217
+
+ 
+
+icpc (ICC) 19.1.1.217 20200306
+Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
+
+Starting up hydro driver
+
+### WARNING in CheckDesired:
+Parameter file missing desired field <hydro>/cfl
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187775e-03 zone-cycles/wsec = 1.07e+06
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015285e-03 zone-cycles/wsec = 1.13e+06
+cycle=3 time=1.0546864458062345e-02 dt=3.5156214875800194e-03 zone-cycles/wsec = 1.20e+06
+cycle=4 time=1.4062485945642364e-02 dt=3.5156214880400515e-03 zone-cycles/wsec = 1.25e+06
+cycle=5 time=1.7578107433682415e-02 dt=3.5156214886011001e-03 zone-cycles/wsec = 1.28e+06
+cycle=6 time=2.1093728922283516e-02 dt=3.5156214889416706e-03 zone-cycles/wsec = 1.36e+06
+cycle=7 time=2.4609350411225188e-02 dt=3.5156214896218895e-03 zone-cycles/wsec = 1.36e+06
+cycle=8 time=2.8124971900847076e-02 dt=3.5156214898683512e-03 zone-cycles/wsec = 1.37e+06
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03 zone-cycles/wsec = 1.37e+06
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03 zone-cycles/wsec = 1.35e+06
+
+Driver completed.
+time=3.52e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 1.66e+01
+zone-cycles/wallsecond = 1.26e+06
+Starting up hydro driver
+
+### WARNING in CheckDesired:
+Parameter file missing desired field <hydro>/cfl
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187775e-03 zone-cycles/wsec = 5.73e+04
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015285e-03 zone-cycles/wsec = 1.43e+06
+cycle=3 time=1.0546864458062345e-02 dt=3.5156214875800194e-03 zone-cycles/wsec = 1.47e+06
+cycle=4 time=1.4062485945642364e-02 dt=3.5156214880400515e-03 zone-cycles/wsec = 1.41e+06
+cycle=5 time=1.7578107433682415e-02 dt=3.5156214886011001e-03 zone-cycles/wsec = 1.47e+06
+cycle=6 time=2.1093728922283516e-02 dt=3.5156214889416706e-03 zone-cycles/wsec = 1.47e+06
+cycle=7 time=2.4609350411225188e-02 dt=3.5156214896218895e-03 zone-cycles/wsec = 1.47e+06
+cycle=8 time=2.8124971900847076e-02 dt=3.5156214898683512e-03 zone-cycles/wsec = 1.45e+06
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03 zone-cycles/wsec = 1.38e+06
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03 zone-cycles/wsec = 1.40e+06
+
+Driver completed.
+time=3.52e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 4.98e+01
+zone-cycles/wallsecond = 4.21e+05
+
+BEGIN KOKKOS PROFILING REPORT:
+TOTAL TIME: 9.31e+01 seconds
+TOP-DOWN TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <remainder> <kernels per second> <number of calls> <name> [type]
+=================== 
+|-> 2.54e+00 sec 2.7% 0.0% 0.0% 100.0% 0.00e+00 20 FluxDivergenceMesh [region]
+|-> 2.38e+00 sec 2.6% 0.0% 0.0% 0.2% 0.00e+00 10240 Riemann Z [region]
+|   |-> 2.38e+00 sec 2.6% 0.0% 0.0% 100.0% 0.00e+00 10240 Riemann hydro HLLE [region]
+|-> 2.35e+00 sec 2.5% 0.0% 0.0% 0.2% 0.00e+00 10240 Riemann Y [region]
+|   |-> 2.35e+00 sec 2.5% 0.0% 0.0% 100.0% 0.00e+00 10240 Riemann hydro HLLE [region]
+|-> 2.35e+00 sec 2.5% 0.0% 0.0% 0.2% 0.00e+00 10240 Riemann X [region]
+|   |-> 2.34e+00 sec 2.5% 0.0% 0.0% 100.0% 0.00e+00 10240 Riemann hydro HLLE [region]
+|-> 1.13e+00 sec 1.2% 100.0% 0.0% ------ 44038 Kokkos::View::initialization [for]
+|-> 9.21e-01 sec 1.0% 0.0% 0.0% 0.3% 0.00e+00 10240 Reconstruct X [region]
+|   |-> 5.28e-01 sec 0.6% 0.0% 0.0% 100.0% 0.00e+00 5120 DonorCell X1 [region]
+|   |-> 3.90e-01 sec 0.4% 0.0% 0.0% 100.0% 0.00e+00 5120 PLM X1 [region]
+|-> 7.73e-01 sec 0.8% 0.0% 0.0% 100.0% 0.00e+00 10240 UpdateMeshBlockData [region]
+|-> 6.88e-01 sec 0.7% 0.0% 0.0% 100.0% 0.00e+00 279552 UnpackData 4D [region]
+|-> 5.13e-01 sec 0.6% 0.0% 0.0% 100.0% 0.00e+00 10752 ConservedToPrimitive [region]
+|-> 4.74e-01 sec 0.5% 0.0% 0.0% 100.0% 0.00e+00 279552 PackData 4D [region]
+|-> 3.90e-01 sec 0.4% 0.0% 0.0% 0.7% 0.00e+00 10240 Reconstruct Y [region]
+|   |-> 2.07e-01 sec 0.2% 0.0% 0.0% 100.0% 0.00e+00 5120 PLM X2 [region]
+|   |-> 1.80e-01 sec 0.2% 0.0% 0.0% 100.0% 0.00e+00 5120 DonorCell X2 [region]
+|-> 3.90e-01 sec 0.4% 0.0% 0.0% 0.7% 0.00e+00 10240 Reconstruct Z [region]
+|   |-> 2.25e-01 sec 0.2% 0.0% 0.0% 100.0% 0.00e+00 5120 PLM X3 [region]
+|   |-> 1.62e-01 sec 0.2% 0.0% 0.0% 100.0% 0.00e+00 5120 DonorCell X3 [region]
+|-> 3.84e-01 sec 0.4% 100.0% 0.0% ------ 5632 EstimateTimestep [reduce]
+|-> 3.73e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 0"="send buf 1" [copy]
+|-> 3.69e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 4"="send buf 5" [copy]
+|-> 3.68e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 1"="send buf 0" [copy]
+|-> 3.68e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 2"="send buf 3" [copy]
+|-> 3.60e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 3"="send buf 2" [copy]
+|-> 3.59e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 5"="send buf 4" [copy]
+
+BOTTOM-UP TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <number of calls> <name> [type]
+=================== 
+|-> 7.07e+00 sec 7.6% 0.0% 0.0% 0.0% 0.00e+00 30720 Riemann hydro HLLE [region]
+|   |-> 2.38e+00 sec 2.6% 0.0% 0.0% 0.0% 0.00e+00 10240 Riemann Z [region]
+|   |-> 2.35e+00 sec 2.5% 0.0% 0.0% 0.0% 0.00e+00 10240 Riemann Y [region]
+|   |-> 2.34e+00 sec 2.5% 0.0% 0.0% 0.0% 0.00e+00 10240 Riemann X [region]
+|-> 2.54e+00 sec 2.7% 0.0% 0.0% 0.0% 0.00e+00 20 FluxDivergenceMesh [region]
+|-> 1.13e+00 sec 1.2% 100.0% 0.0% ------ 44038 Kokkos::View::initialization [for]
+|-> 7.73e-01 sec 0.8% 0.0% 0.0% 0.0% 0.00e+00 10240 UpdateMeshBlockData [region]
+|-> 6.88e-01 sec 0.7% 0.0% 0.0% 0.0% 0.00e+00 279552 UnpackData 4D [region]
+|-> 5.28e-01 sec 0.6% 0.0% 0.0% 0.0% 0.00e+00 5120 DonorCell X1 [region]
+|   |-> 5.28e-01 sec 0.6% 0.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct X [region]
+|-> 5.13e-01 sec 0.6% 0.0% 0.0% 0.0% 0.00e+00 10752 ConservedToPrimitive [region]
+|-> 4.74e-01 sec 0.5% 0.0% 0.0% 0.0% 0.00e+00 279552 PackData 4D [region]
+|-> 3.90e-01 sec 0.4% 0.0% 0.0% 0.0% 0.00e+00 5120 PLM X1 [region]
+|   |-> 3.90e-01 sec 0.4% 0.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct X [region]
+|-> 3.84e-01 sec 0.4% 100.0% 0.0% ------ 5632 EstimateTimestep [reduce]
+|-> 2.25e-01 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 5120 PLM X3 [region]
+|   |-> 2.25e-01 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct Z [region]
+|-> 2.07e-01 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 5120 PLM X2 [region]
+|   |-> 2.07e-01 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct Y [region]
+|-> 1.80e-01 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 5120 DonorCell X2 [region]
+|   |-> 1.80e-01 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct Y [region]
+|-> 1.62e-01 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 5120 DonorCell X3 [region]
+|   |-> 1.62e-01 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct Z [region]
+|-> 3.73e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 0"="send buf 1" [copy]
+|-> 3.69e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 4"="send buf 5" [copy]
+|-> 3.68e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 1"="send buf 0" [copy]
+|-> 3.68e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 2"="send buf 3" [copy]
+|-> 3.60e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 3"="send buf 2" [copy]
+|-> 3.59e-02 sec 0.0% 100.0% 0.0% ------ 10752 "recv buf 5"="send buf 4" [copy]
+
+KOKKOS HOST SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 1919727.5 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+
+KOKKOS CUDA SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 0.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+
+Host process high water mark memory consumption: 1959380 kB
+
+END KOKKOS PROFILING REPORT.
