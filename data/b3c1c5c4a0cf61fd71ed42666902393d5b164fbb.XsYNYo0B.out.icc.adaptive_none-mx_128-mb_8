@@ -1,0 +1,37 @@
+PERFORMANCE LOG
+July Parth, latest Kokkos, no MBP, scratch 0
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0         5) numactl/2.0.13    9) intel/2020a
+  2) zlib/1.2.11           6) UCX/1.8.0        10) git/2.27.0
+  3) binutils/2.34         7) impi/2019.7.217
+  4) iccifort/2020.1.217   8) imkl/2020.1.217
+
+ 
+
+icpc (ICC) 19.1.1.217 20200306
+Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
+
+Starting up hydro driver
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187775e-03
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015285e-03
+cycle=3 time=1.0546864458062345e-02 dt=3.5156214875800207e-03
+cycle=4 time=1.4062485945642366e-02 dt=3.5156214880400515e-03
+cycle=5 time=1.7578107433682419e-02 dt=3.5156214886011001e-03
+cycle=6 time=2.1093728922283519e-02 dt=3.5156214889416706e-03
+cycle=7 time=2.4609350411225191e-02 dt=3.5156214896218878e-03
+cycle=8 time=2.8124971900847080e-02 dt=3.5156214898683495e-03
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885348e-03
+
+Driver completed.
+time=3.5156214880983958e-02 cycle=10
+tlim=1.0000000000000000e+00 nlim=10
+
+zone-cycles = 20971520
+cpu time used  = 9.7739999999999995e+01
+zone-cycles/cpu_second = 2.1456435440965829e+05
