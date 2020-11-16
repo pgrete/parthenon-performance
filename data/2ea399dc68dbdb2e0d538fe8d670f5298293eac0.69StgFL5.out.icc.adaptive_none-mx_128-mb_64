@@ -1,0 +1,28 @@
+PERFORMANCE LOG
+july main
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0         5) numactl/2.0.13    9) intel/2020a
+  2) zlib/1.2.11           6) UCX/1.8.0        10) git/2.27.0
+  3) binutils/2.34         7) impi/2019.7.217
+  4) iccifort/2020.1.217   8) imkl/2020.1.217
+
+ 
+
+icpc (ICC) 19.1.1.217 20200306
+Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
+
+Starting up hydro driver
+### PARTHENON ERROR
+  Message:     ### FATAL ERROR in Outputs constructor
+Executable not configured for HDF5 outputs, but HDF5 file format is requested in output block 'parthenon/output0'
+
+  File:        /tmp/local/7333331/tmp.KIR7JSSp4T/athenapk/external/parthenon/src/outputs/outputs.cpp
+  Line number: 254
+Starting up hydro driver
+### PARTHENON ERROR
+  Message:     ### FATAL ERROR in Outputs constructor
+Executable not configured for HDF5 outputs, but HDF5 file format is requested in output block 'parthenon/output0'
+
+  File:        /tmp/local/7333331/tmp.KIR7JSSp4T/athenapk/external/parthenon/src/outputs/outputs.cpp
+  Line number: 254
