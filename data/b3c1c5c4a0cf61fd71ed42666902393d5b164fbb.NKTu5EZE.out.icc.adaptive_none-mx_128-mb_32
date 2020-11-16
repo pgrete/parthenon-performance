@@ -1,0 +1,884 @@
+PERFORMANCE LOG
+July Parth, latest Kokkos, no MBP, no scratch
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0         5) numactl/2.0.13    9) intel/2020a
+  2) zlib/1.2.11           6) UCX/1.8.0        10) git/2.27.0
+  3) binutils/2.34         7) impi/2019.7.217
+  4) iccifort/2020.1.217   8) imkl/2020.1.217
+
+ 
+
+icpc (ICC) 19.1.1.217 20200306
+Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
+
+Starting up hydro driver
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187775e-03
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015285e-03
+cycle=3 time=1.0546864458062345e-02 dt=3.5156214875800194e-03
+cycle=4 time=1.4062485945642364e-02 dt=3.5156214880400515e-03
+cycle=5 time=1.7578107433682415e-02 dt=3.5156214886011001e-03
+cycle=6 time=2.1093728922283516e-02 dt=3.5156214889416706e-03
+cycle=7 time=2.4609350411225188e-02 dt=3.5156214896218895e-03
+cycle=8 time=2.8124971900847076e-02 dt=3.5156214898683512e-03
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03
+
+Driver completed.
+time=3.5156214880983958e-02 cycle=10
+tlim=1.0000000000000000e+00 nlim=10
+
+zone-cycles = 20971520
+cpu time used  = 1.0699999999999999e+01
+zone-cycles/cpu_second = 1.9599551401869161e+06
+Starting up hydro driver
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187775e-03
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015285e-03
+cycle=3 time=1.0546864458062345e-02 dt=3.5156214875800194e-03
+cycle=4 time=1.4062485945642364e-02 dt=3.5156214880400515e-03
+cycle=5 time=1.7578107433682415e-02 dt=3.5156214886011001e-03
+cycle=6 time=2.1093728922283516e-02 dt=3.5156214889416706e-03
+cycle=7 time=2.4609350411225188e-02 dt=3.5156214896218895e-03
+cycle=8 time=2.8124971900847076e-02 dt=3.5156214898683512e-03
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03
+
+Driver completed.
+time=3.5156214880983958e-02 cycle=10
+tlim=1.0000000000000000e+00 nlim=10
+
+zone-cycles = 20971520
+cpu time used  = 1.0990000000000000e+01
+zone-cycles/cpu_second = 1.9082365787079162e+06
+
+BEGIN KOKKOS PROFILING REPORT:
+TOTAL TIME: 1.2066048560000000e+01 seconds
+TOP-DOWN TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <remainder> <kernels per second> <number of calls> <name> [type]
+=================== 
+|-> 1.98e+00 sec 16.4% 0.0% 0.0% 0.1% 0.00e+00 1280 Riemann X [region]
+|   |-> 1.98e+00 sec 16.4% 0.0% 0.0% 100.0% 0.00e+00 1280 Riemann hydro HLLE [region]
+|-> 1.95e+00 sec 16.2% 0.0% 0.0% 0.1% 0.00e+00 1280 Riemann Y [region]
+|   |-> 1.95e+00 sec 16.2% 0.0% 0.0% 100.0% 0.00e+00 1280 Riemann hydro HLLE [region]
+|-> 1.95e+00 sec 16.1% 0.0% 0.0% 0.1% 0.00e+00 1280 Riemann Z [region]
+|   |-> 1.95e+00 sec 16.1% 0.0% 0.0% 100.0% 0.00e+00 1280 Riemann hydro HLLE [region]
+|-> 8.00e-01 sec 6.6% 0.0% 0.0% 0.1% 0.00e+00 1280 Reconstruct X [region]
+|   |-> 4.74e-01 sec 3.9% 0.0% 0.0% 100.0% 0.00e+00 640 DonorCell X1 [region]
+|   |-> 3.25e-01 sec 2.7% 0.0% 0.0% 100.0% 0.00e+00 640 PLM X1 [region]
+|-> 7.79e-01 sec 6.5% 0.0% 0.0% 100.0% 0.00e+00 1280 flux divergence [region]
+|-> 5.39e-01 sec 4.5% 0.0% 0.0% 100.0% 0.00e+00 1280 UpdateContainer [region]
+|-> 4.24e-01 sec 3.5% 0.0% 0.0% 100.0% 0.00e+00 1344 ConservedToPrimitive [region]
+|-> 4.06e-01 sec 3.4% 0.0% 0.0% 0.2% 0.00e+00 1280 Reconstruct Y [region]
+|   |-> 2.14e-01 sec 1.8% 0.0% 0.0% 100.0% 0.00e+00 640 DonorCell X2 [region]
+|   |-> 1.91e-01 sec 1.6% 0.0% 0.0% 100.0% 0.00e+00 640 PLM X2 [region]
+|-> 3.90e-01 sec 3.2% 0.0% 0.0% 100.0% 0.00e+00 34944 UnpackData 4D [region]
+|-> 3.86e-01 sec 3.2% 0.0% 0.0% 0.2% 0.00e+00 1280 Reconstruct Z [region]
+|   |-> 1.96e-01 sec 1.6% 0.0% 0.0% 100.0% 0.00e+00 640 PLM X3 [region]
+|   |-> 1.89e-01 sec 1.6% 0.0% 0.0% 100.0% 0.00e+00 640 DonorCell X3 [region]
+|-> 3.23e-01 sec 2.7% 100.0% 0.0% ------ 704 EstimateTimestep [reduce]
+|-> 2.35e-01 sec 1.9% 0.0% 0.0% 100.0% 0.00e+00 34944 PackData 4D [region]
+|-> 2.08e-01 sec 1.7% 100.0% 0.0% ------ 192 Kokkos::View::initialization [cons] [for]
+|-> 2.08e-01 sec 1.7% 100.0% 0.0% ------ 192 Kokkos::View::initialization [prim] [for]
+|-> 7.04e-02 sec 0.6% 100.0% 0.0% ------ 64 Kokkos::View::initialization [wl] [for]
+|-> 7.02e-02 sec 0.6% 100.0% 0.0% ------ 64 Kokkos::View::initialization [wr] [for]
+|-> 7.02e-02 sec 0.6% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX1] [for]
+|-> 7.02e-02 sec 0.6% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX3] [for]
+|-> 7.02e-02 sec 0.6% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX2] [for]
+|-> 1.86e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 1"="send buf 0" [copy]
+|-> 1.84e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 0"="send buf 1" [copy]
+|-> 1.83e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 5"="send buf 4" [copy]
+|-> 1.83e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 2"="send buf 3" [copy]
+|-> 1.83e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 3"="send buf 2" [copy]
+|-> 1.82e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 4"="send buf 5" [copy]
+|-> 5.70e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons scratch] [for]
+|-> 3.07e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 4] [for]
+|-> 3.04e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 1] [for]
+|-> 3.03e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 4] [for]
+|-> 3.03e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 5] [for]
+|-> 3.03e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 2] [for]
+|-> 3.02e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 3] [for]
+|-> 3.02e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 3] [for]
+|-> 3.01e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 0] [for]
+|-> 3.01e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 0] [for]
+|-> 3.01e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 5] [for]
+|-> 3.00e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 1] [for]
+|-> 2.99e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 2] [for]
+
+BOTTOM-UP TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <number of calls> <name> [type]
+=================== 
+|-> 5.87e+00 sec 48.7% 0.0% 0.0% 0.0% 0.00e+00 3840 Riemann hydro HLLE [region]
+|   |-> 1.98e+00 sec 16.4% 0.0% 0.0% 0.0% 0.00e+00 1280 Riemann X [region]
+|   |-> 1.95e+00 sec 16.2% 0.0% 0.0% 0.0% 0.00e+00 1280 Riemann Y [region]
+|   |-> 1.95e+00 sec 16.1% 0.0% 0.0% 0.0% 0.00e+00 1280 Riemann Z [region]
+|-> 7.79e-01 sec 6.5% 0.0% 0.0% 0.0% 0.00e+00 1280 flux divergence [region]
+|-> 5.39e-01 sec 4.5% 0.0% 0.0% 0.0% 0.00e+00 1280 UpdateContainer [region]
+|-> 4.74e-01 sec 3.9% 0.0% 0.0% 0.0% 0.00e+00 640 DonorCell X1 [region]
+|   |-> 4.74e-01 sec 3.9% 0.0% 0.0% 0.0% 0.00e+00 640 Reconstruct X [region]
+|-> 4.24e-01 sec 3.5% 0.0% 0.0% 0.0% 0.00e+00 1344 ConservedToPrimitive [region]
+|-> 3.90e-01 sec 3.2% 0.0% 0.0% 0.0% 0.00e+00 34944 UnpackData 4D [region]
+|-> 3.25e-01 sec 2.7% 0.0% 0.0% 0.0% 0.00e+00 640 PLM X1 [region]
+|   |-> 3.25e-01 sec 2.7% 0.0% 0.0% 0.0% 0.00e+00 640 Reconstruct X [region]
+|-> 3.23e-01 sec 2.7% 100.0% 0.0% ------ 704 EstimateTimestep [reduce]
+|-> 2.35e-01 sec 1.9% 0.0% 0.0% 0.0% 0.00e+00 34944 PackData 4D [region]
+|-> 2.14e-01 sec 1.8% 0.0% 0.0% 0.0% 0.00e+00 640 DonorCell X2 [region]
+|   |-> 2.14e-01 sec 1.8% 0.0% 0.0% 0.0% 0.00e+00 640 Reconstruct Y [region]
+|-> 2.08e-01 sec 1.7% 100.0% 0.0% ------ 192 Kokkos::View::initialization [cons] [for]
+|-> 2.08e-01 sec 1.7% 100.0% 0.0% ------ 192 Kokkos::View::initialization [prim] [for]
+|-> 1.96e-01 sec 1.6% 0.0% 0.0% 0.0% 0.00e+00 640 PLM X3 [region]
+|   |-> 1.96e-01 sec 1.6% 0.0% 0.0% 0.0% 0.00e+00 640 Reconstruct Z [region]
+|-> 1.91e-01 sec 1.6% 0.0% 0.0% 0.0% 0.00e+00 640 PLM X2 [region]
+|   |-> 1.91e-01 sec 1.6% 0.0% 0.0% 0.0% 0.00e+00 640 Reconstruct Y [region]
+|-> 1.89e-01 sec 1.6% 0.0% 0.0% 0.0% 0.00e+00 640 DonorCell X3 [region]
+|   |-> 1.89e-01 sec 1.6% 0.0% 0.0% 0.0% 0.00e+00 640 Reconstruct Z [region]
+|-> 7.04e-02 sec 0.6% 100.0% 0.0% ------ 64 Kokkos::View::initialization [wl] [for]
+|-> 7.02e-02 sec 0.6% 100.0% 0.0% ------ 64 Kokkos::View::initialization [wr] [for]
+|-> 7.02e-02 sec 0.6% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX1] [for]
+|-> 7.02e-02 sec 0.6% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX3] [for]
+|-> 7.02e-02 sec 0.6% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons.fluxX2] [for]
+|-> 1.86e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 1"="send buf 0" [copy]
+|-> 1.84e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 0"="send buf 1" [copy]
+|-> 1.83e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 5"="send buf 4" [copy]
+|-> 1.83e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 2"="send buf 3" [copy]
+|-> 1.83e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 3"="send buf 2" [copy]
+|-> 1.82e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 4"="send buf 5" [copy]
+|-> 5.70e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [cons scratch] [for]
+|-> 3.07e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 4] [for]
+|-> 3.04e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 1] [for]
+|-> 3.03e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 4] [for]
+|-> 3.03e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 5] [for]
+|-> 3.03e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 2] [for]
+|-> 3.02e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 3] [for]
+|-> 3.02e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 3] [for]
+|-> 3.01e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 0] [for]
+|-> 3.01e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 0] [for]
+|-> 3.01e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 5] [for]
+|-> 3.00e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 1] [for]
+|-> 2.99e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 2] [for]
+
+KOKKOS HOST SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 1354847.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% cons.fluxX1
+  0.1% cons.fluxX2
+  0.1% cons.fluxX3
+  0.1% prim
+  0.1% wl
+  0.1% wr
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons
+  0.1% prim
+  0.1% cons scratch
+
+KOKKOS CUDA SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 0.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+
+Host process high water mark memory consumption: 1365248 kB
+
+END KOKKOS PROFILING REPORT.
