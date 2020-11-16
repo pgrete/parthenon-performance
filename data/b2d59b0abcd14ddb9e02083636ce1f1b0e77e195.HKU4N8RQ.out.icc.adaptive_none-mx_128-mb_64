@@ -1,0 +1,274 @@
+PERFORMANCE LOG
+latest Parth, latest Kokkos, no MBP, scratch no
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0         5) numactl/2.0.13    9) intel/2020a
+  2) zlib/1.2.11           6) UCX/1.8.0        10) git/2.27.0
+  3) binutils/2.34         7) impi/2019.7.217
+  4) iccifort/2020.1.217   8) imkl/2020.1.217
+
+ 
+
+icpc (ICC) 19.1.1.217 20200306
+Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
+
+Starting up hydro driver
+
+### WARNING in CheckDesired:
+Parameter file missing desired field <hydro>/cfl
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187775e-03 zone-cycles/wsec = 2.11e+06
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015285e-03 zone-cycles/wsec = 2.37e+06
+cycle=3 time=1.0546864458062345e-02 dt=3.5156214875800194e-03 zone-cycles/wsec = 2.27e+06
+cycle=4 time=1.4062485945642364e-02 dt=3.5156214880400515e-03 zone-cycles/wsec = 2.28e+06
+cycle=5 time=1.7578107433682415e-02 dt=3.5156214886011001e-03 zone-cycles/wsec = 2.35e+06
+cycle=6 time=2.1093728922283516e-02 dt=3.5156214889416706e-03 zone-cycles/wsec = 2.30e+06
+cycle=7 time=2.4609350411225188e-02 dt=3.5156214896218895e-03 zone-cycles/wsec = 2.34e+06
+cycle=8 time=2.8124971900847076e-02 dt=3.5156214898683512e-03 zone-cycles/wsec = 2.37e+06
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03 zone-cycles/wsec = 2.37e+06
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03 zone-cycles/wsec = 2.24e+06
+
+Driver completed.
+time=3.52e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 9.16e+00
+zone-cycles/wallsecond = 2.29e+06
+Starting up hydro driver
+
+### WARNING in CheckDesired:
+Parameter file missing desired field <hydro>/cfl
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187775e-03 zone-cycles/wsec = 2.09e+06
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015285e-03 zone-cycles/wsec = 2.35e+06
+cycle=3 time=1.0546864458062345e-02 dt=3.5156214875800194e-03 zone-cycles/wsec = 2.28e+06
+cycle=4 time=1.4062485945642364e-02 dt=3.5156214880400515e-03 zone-cycles/wsec = 2.28e+06
+cycle=5 time=1.7578107433682415e-02 dt=3.5156214886011001e-03 zone-cycles/wsec = 2.39e+06
+cycle=6 time=2.1093728922283516e-02 dt=3.5156214889416706e-03 zone-cycles/wsec = 2.34e+06
+cycle=7 time=2.4609350411225188e-02 dt=3.5156214896218895e-03 zone-cycles/wsec = 2.39e+06
+cycle=8 time=2.8124971900847076e-02 dt=3.5156214898683512e-03 zone-cycles/wsec = 2.40e+06
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03 zone-cycles/wsec = 2.38e+06
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03 zone-cycles/wsec = 2.21e+06
+
+Driver completed.
+time=3.52e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 9.12e+00
+zone-cycles/wallsecond = 2.30e+06
+
+BEGIN KOKKOS PROFILING REPORT:
+TOTAL TIME: 9.45e+00 seconds
+TOP-DOWN TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <remainder> <kernels per second> <number of calls> <name> [type]
+=================== 
+|-> 1.78e+00 sec 18.8% 0.0% 0.0% 0.0% 0.00e+00 160 Riemann X [region]
+|   |-> 1.78e+00 sec 18.8% 0.0% 0.0% 100.0% 0.00e+00 160 Riemann hydro HLLE [region]
+|-> 1.77e+00 sec 18.8% 0.0% 0.0% 0.0% 0.00e+00 160 Riemann Y [region]
+|   |-> 1.77e+00 sec 18.8% 0.0% 0.0% 100.0% 0.00e+00 160 Riemann hydro HLLE [region]
+|-> 1.77e+00 sec 18.8% 0.0% 0.0% 0.0% 0.00e+00 160 Riemann Z [region]
+|   |-> 1.77e+00 sec 18.7% 0.0% 0.0% 100.0% 0.00e+00 160 Riemann hydro HLLE [region]
+|-> 6.54e-01 sec 6.9% 0.0% 0.0% 100.0% 0.00e+00 160 FluxDivergenceBlock [region]
+|-> 5.36e-01 sec 5.7% 0.0% 0.0% 0.0% 0.00e+00 160 Reconstruct X [region]
+|   |-> 3.07e-01 sec 3.2% 0.0% 0.0% 100.0% 0.00e+00 80 DonorCell X1 [region]
+|   |-> 2.29e-01 sec 2.4% 0.0% 0.0% 100.0% 0.00e+00 80 PLM X1 [region]
+|-> 5.11e-01 sec 5.4% 0.0% 0.0% 0.0% 0.00e+00 160 Reconstruct Z [region]
+|   |-> 2.65e-01 sec 2.8% 0.0% 0.0% 100.0% 0.00e+00 80 DonorCell X3 [region]
+|   |-> 2.46e-01 sec 2.6% 0.0% 0.0% 100.0% 0.00e+00 80 PLM X3 [region]
+|-> 4.80e-01 sec 5.1% 0.0% 0.0% 0.0% 0.00e+00 160 Reconstruct Y [region]
+|   |-> 2.66e-01 sec 2.8% 0.0% 0.0% 100.0% 0.00e+00 80 DonorCell X2 [region]
+|   |-> 2.13e-01 sec 2.3% 0.0% 0.0% 100.0% 0.00e+00 80 PLM X2 [region]
+|-> 3.92e-01 sec 4.2% 0.0% 0.0% 100.0% 0.00e+00 160 UpdateMeshBlockData [region]
+|-> 3.10e-01 sec 3.3% 100.0% 0.0% ------ 88 EstimateTimestep [reduce]
+|-> 3.03e-01 sec 3.2% 0.0% 0.0% 100.0% 0.00e+00 168 ConservedToPrimitive [region]
+|-> 2.08e-01 sec 2.2% 0.0% 0.0% 100.0% 0.00e+00 4368 PackData 4D [region]
+|-> 1.66e-01 sec 1.8% 0.0% 0.0% 100.0% 0.00e+00 4368 UnpackData 4D [region]
+|-> 9.00e-02 sec 1.0% 100.0% 0.0% ------ 24 Kokkos::View::initialization [prim] [for]
+|-> 8.99e-02 sec 1.0% 100.0% 0.0% ------ 24 Kokkos::View::initialization [cons] [for]
+|-> 3.00e-02 sec 0.3% 100.0% 0.0% ------ 8 Kokkos::View::initialization [wl] [for]
+|-> 3.00e-02 sec 0.3% 100.0% 0.0% ------ 8 Kokkos::View::initialization [cons.fluxX3] [for]
+|-> 2.99e-02 sec 0.3% 100.0% 0.0% ------ 8 Kokkos::View::initialization [cons.fluxX1] [for]
+|-> 2.99e-02 sec 0.3% 100.0% 0.0% ------ 8 Kokkos::View::initialization [wr] [for]
+|-> 2.99e-02 sec 0.3% 100.0% 0.0% ------ 8 Kokkos::View::initialization [cons.fluxX2] [for]
+|-> 1.15e-02 sec 0.1% 100.0% 0.0% ------ 8 Kokkos::View::initialization [cons scratch] [for]
+|-> 1.12e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 1"="send buf 0" [copy]
+|-> 1.08e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 0"="send buf 1" [copy]
+|-> 1.07e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 2"="send buf 3" [copy]
+|-> 1.07e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 5"="send buf 4" [copy]
+|-> 1.06e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 4"="send buf 5" [copy]
+|-> 1.06e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 3"="send buf 2" [copy]
+|-> 1.58e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 0] [for]
+|-> 1.58e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 1] [for]
+|-> 1.57e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 1] [for]
+|-> 1.57e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 2] [for]
+|-> 1.56e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 4] [for]
+|-> 1.56e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 3] [for]
+|-> 1.56e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 4] [for]
+|-> 1.56e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 5] [for]
+|-> 1.55e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 0] [for]
+|-> 1.55e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 2] [for]
+|-> 1.55e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 3] [for]
+|-> 1.55e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 5] [for]
+
+BOTTOM-UP TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <number of calls> <name> [type]
+=================== 
+|-> 5.32e+00 sec 56.3% 0.0% 0.0% 0.0% 0.00e+00 480 Riemann hydro HLLE [region]
+|   |-> 1.78e+00 sec 18.8% 0.0% 0.0% 0.0% 0.00e+00 160 Riemann X [region]
+|   |-> 1.77e+00 sec 18.8% 0.0% 0.0% 0.0% 0.00e+00 160 Riemann Y [region]
+|   |-> 1.77e+00 sec 18.7% 0.0% 0.0% 0.0% 0.00e+00 160 Riemann Z [region]
+|-> 6.54e-01 sec 6.9% 0.0% 0.0% 0.0% 0.00e+00 160 FluxDivergenceBlock [region]
+|-> 3.92e-01 sec 4.2% 0.0% 0.0% 0.0% 0.00e+00 160 UpdateMeshBlockData [region]
+|-> 3.10e-01 sec 3.3% 100.0% 0.0% ------ 88 EstimateTimestep [reduce]
+|-> 3.07e-01 sec 3.2% 0.0% 0.0% 0.0% 0.00e+00 80 DonorCell X1 [region]
+|   |-> 3.07e-01 sec 3.2% 0.0% 0.0% 0.0% 0.00e+00 80 Reconstruct X [region]
+|-> 3.03e-01 sec 3.2% 0.0% 0.0% 0.0% 0.00e+00 168 ConservedToPrimitive [region]
+|-> 2.66e-01 sec 2.8% 0.0% 0.0% 0.0% 0.00e+00 80 DonorCell X2 [region]
+|   |-> 2.66e-01 sec 2.8% 0.0% 0.0% 0.0% 0.00e+00 80 Reconstruct Y [region]
+|-> 2.65e-01 sec 2.8% 0.0% 0.0% 0.0% 0.00e+00 80 DonorCell X3 [region]
+|   |-> 2.65e-01 sec 2.8% 0.0% 0.0% 0.0% 0.00e+00 80 Reconstruct Z [region]
+|-> 2.46e-01 sec 2.6% 0.0% 0.0% 0.0% 0.00e+00 80 PLM X3 [region]
+|   |-> 2.46e-01 sec 2.6% 0.0% 0.0% 0.0% 0.00e+00 80 Reconstruct Z [region]
+|-> 2.29e-01 sec 2.4% 0.0% 0.0% 0.0% 0.00e+00 80 PLM X1 [region]
+|   |-> 2.29e-01 sec 2.4% 0.0% 0.0% 0.0% 0.00e+00 80 Reconstruct X [region]
+|-> 2.13e-01 sec 2.3% 0.0% 0.0% 0.0% 0.00e+00 80 PLM X2 [region]
+|   |-> 2.13e-01 sec 2.3% 0.0% 0.0% 0.0% 0.00e+00 80 Reconstruct Y [region]
+|-> 2.08e-01 sec 2.2% 0.0% 0.0% 0.0% 0.00e+00 4368 PackData 4D [region]
+|-> 1.66e-01 sec 1.8% 0.0% 0.0% 0.0% 0.00e+00 4368 UnpackData 4D [region]
+|-> 9.00e-02 sec 1.0% 100.0% 0.0% ------ 24 Kokkos::View::initialization [prim] [for]
+|-> 8.99e-02 sec 1.0% 100.0% 0.0% ------ 24 Kokkos::View::initialization [cons] [for]
+|-> 3.00e-02 sec 0.3% 100.0% 0.0% ------ 8 Kokkos::View::initialization [wl] [for]
+|-> 3.00e-02 sec 0.3% 100.0% 0.0% ------ 8 Kokkos::View::initialization [cons.fluxX3] [for]
+|-> 2.99e-02 sec 0.3% 100.0% 0.0% ------ 8 Kokkos::View::initialization [cons.fluxX1] [for]
+|-> 2.99e-02 sec 0.3% 100.0% 0.0% ------ 8 Kokkos::View::initialization [wr] [for]
+|-> 2.99e-02 sec 0.3% 100.0% 0.0% ------ 8 Kokkos::View::initialization [cons.fluxX2] [for]
+|-> 1.15e-02 sec 0.1% 100.0% 0.0% ------ 8 Kokkos::View::initialization [cons scratch] [for]
+|-> 1.12e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 1"="send buf 0" [copy]
+|-> 1.08e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 0"="send buf 1" [copy]
+|-> 1.07e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 2"="send buf 3" [copy]
+|-> 1.07e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 5"="send buf 4" [copy]
+|-> 1.06e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 4"="send buf 5" [copy]
+|-> 1.06e-02 sec 0.1% 100.0% 0.0% ------ 168 "recv buf 3"="send buf 2" [copy]
+|-> 1.58e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 0] [for]
+|-> 1.58e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 1] [for]
+|-> 1.57e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 1] [for]
+|-> 1.57e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 2] [for]
+|-> 1.56e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 4] [for]
+|-> 1.56e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 3] [for]
+|-> 1.56e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 4] [for]
+|-> 1.56e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 5] [for]
+|-> 1.55e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 0] [for]
+|-> 1.55e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 2] [for]
+|-> 1.55e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [send buf 3] [for]
+|-> 1.55e-03 sec 0.0% 100.0% 0.0% ------ 8 Kokkos::View::initialization [recv buf 5] [for]
+
+KOKKOS HOST SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 1125945.1 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+  1.1% cons
+  1.1% cons.fluxX1
+  1.1% cons.fluxX2
+  1.1% cons.fluxX3
+  1.1% prim
+  1.1% wl
+  1.1% wr
+  1.1% cons
+  1.1% cons.fluxX1
+  1.1% cons.fluxX2
+  1.1% cons.fluxX3
+  1.1% prim
+  1.1% wl
+  1.1% wr
+  1.1% cons
+  1.1% cons.fluxX1
+  1.1% cons.fluxX2
+  1.1% cons.fluxX3
+  1.1% prim
+  1.1% wl
+  1.1% wr
+  1.1% cons
+  1.1% cons.fluxX1
+  1.1% cons.fluxX2
+  1.1% cons.fluxX3
+  1.1% prim
+  1.1% wl
+  1.1% wr
+  1.1% cons
+  1.1% cons.fluxX1
+  1.1% cons.fluxX2
+  1.1% cons.fluxX3
+  1.1% prim
+  1.1% wl
+  1.1% wr
+  1.1% cons
+  1.1% cons.fluxX1
+  1.1% cons.fluxX2
+  1.1% cons.fluxX3
+  1.1% prim
+  1.1% wl
+  1.1% wr
+  1.1% cons
+  1.1% cons.fluxX1
+  1.1% cons.fluxX2
+  1.1% cons.fluxX3
+  1.1% prim
+  1.1% wl
+  1.1% wr
+  1.1% cons
+  1.1% cons.fluxX1
+  1.1% cons.fluxX2
+  1.1% cons.fluxX3
+  1.1% prim
+  1.1% wl
+  1.1% wr
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons
+  1.1% prim
+  1.1% cons scratch
+
+KOKKOS CUDA SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 0.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+
+Host process high water mark memory consumption: 1131900 kB
+
+END KOKKOS PROFILING REPORT.
