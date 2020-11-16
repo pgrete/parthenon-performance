@@ -1,0 +1,263 @@
+PERFORMANCE LOG
+no MeshBlockPacks, no scratch
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0            28) util-linux/2.35
+  2) zlib/1.2.11              29) GLib/2.64.1
+  3) binutils/2.34            30) PCRE2/10.34
+  4) GCC/9.3.0                31) libpng/1.6.37
+  5) CUDA/11.0.207            32) expat/2.2.9
+  6) gcccuda/2020a            33) freetype/2.10.1
+  7) numactl/2.0.13           34) fontconfig/2.13.92
+  8) XZ/5.2.5                 35) xorg-macros/1.19.2
+  9) libxml2/2.9.10           36) X11/20200222
+ 10) libpciaccess/0.16        37) DBus/1.13.12
+ 11) hwloc/2.2.0              38) libevent/2.1.11
+ 12) UCX/1.9.0-gcccuda-2020a  39) gzip/1.10
+ 13) OpenMPI/4.0.3            40) lz4/1.9.2
+ 14) git/2.27.0               41) zstd/1.4.4
+ 15) bzip2/1.0.8              42) libdrm/2.4.100
+ 16) ncurses/6.2              43) libglvnd/1.2.0
+ 17) libreadline/8.0          44) libunwind/1.3.1
+ 18) Tcl/8.6.10               45) LLVM/9.0.1
+ 19) SQLite/3.31.1            46) Mesa/20.0.2
+ 20) GMP/6.2.0                47) libGLU/9.0.1
+ 21) libffi/3.3               48) NASM/2.14.02
+ 22) Python/3.8.2             49) libjpeg-turbo/2.0.4
+ 23) Szip/2.1.1               50) NSPR/4.25
+ 24) HDF5/1.12.0              51) NSS/3.51
+ 25) double-conversion/3.1.5  52) snappy/1.1.8
+ 26) gettext/0.20.1           53) JasPer/2.0.14
+ 27) PCRE/8.44                54) Qt5/5.14.1
+
+ 
+
+g++ (GCC) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2020 NVIDIA Corporation
+Built on Thu_Jun_11_22:26:38_PDT_2020
+Cuda compilation tools, release 11.0, V11.0.194
+Build cuda_11.0_bu.TC445_37.28540450_0
+Starting up hydro driver
+
+### WARNING in CheckDesired:
+Parameter file missing desired field <hydro>/cfl
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187766e-03 zone-cycles/wsec = 1.79e+06
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015294e-03 zone-cycles/wsec = 3.76e+06
+cycle=3 time=1.0546864458062346e-02 dt=3.5156214875800207e-03 zone-cycles/wsec = 3.73e+06
+cycle=4 time=1.4062485945642366e-02 dt=3.5156214880400515e-03 zone-cycles/wsec = 3.74e+06
+cycle=5 time=1.7578107433682419e-02 dt=3.5156214886011001e-03 zone-cycles/wsec = 3.73e+06
+cycle=6 time=2.1093728922283519e-02 dt=3.5156214889416706e-03 zone-cycles/wsec = 3.74e+06
+cycle=7 time=2.4609350411225191e-02 dt=3.5156214896218895e-03 zone-cycles/wsec = 3.60e+06
+cycle=8 time=2.8124971900847080e-02 dt=3.5156214898683499e-03 zone-cycles/wsec = 3.74e+06
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03 zone-cycles/wsec = 3.74e+06
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03 zone-cycles/wsec = 3.05e+06
+
+Driver completed.
+time=3.52e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 6.38e+00
+zone-cycles/wallsecond = 3.29e+06
+Starting up hydro driver
+
+### WARNING in CheckDesired:
+Parameter file missing desired field <hydro>/cfl
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=3.5156214854420395e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=3.5156214854420395e-03 dt=3.5156214859187766e-03 zone-cycles/wsec = 6.11e+04
+cycle=2 time=7.0312429713608165e-03 dt=3.5156214867015294e-03 zone-cycles/wsec = 1.31e+06
+cycle=3 time=1.0546864458062346e-02 dt=3.5156214875800207e-03 zone-cycles/wsec = 1.32e+06
+cycle=4 time=1.4062485945642366e-02 dt=3.5156214880400515e-03 zone-cycles/wsec = 1.32e+06
+cycle=5 time=1.7578107433682419e-02 dt=3.5156214886011001e-03 zone-cycles/wsec = 1.32e+06
+cycle=6 time=2.1093728922283519e-02 dt=3.5156214889416706e-03 zone-cycles/wsec = 1.32e+06
+cycle=7 time=2.4609350411225191e-02 dt=3.5156214896218895e-03 zone-cycles/wsec = 1.32e+06
+cycle=8 time=2.8124971900847080e-02 dt=3.5156214898683499e-03 zone-cycles/wsec = 1.31e+06
+cycle=9 time=3.1640593390715427e-02 dt=3.5156214902685285e-03 zone-cycles/wsec = 1.31e+06
+cycle=10 time=3.5156214880983958e-02 dt=3.5156214904885357e-03 zone-cycles/wsec = 1.21e+06
+
+Driver completed.
+time=3.52e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 4.88e+01
+zone-cycles/wallsecond = 4.29e+05
+
+BEGIN KOKKOS PROFILING REPORT:
+TOTAL TIME: 8.64e+01 seconds
+TOP-DOWN TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <remainder> <kernels per second> <number of calls> <name> [type]
+=================== 
+|-> 2.69e+00 sec 3.1% 100.0% 0.0% ------ 279552 PackData 4D [for]
+|-> 2.67e+00 sec 3.1% 100.0% 0.0% ------ 279552 UnpackData 4D [for]
+|-> 1.69e-01 sec 0.2% 81.1% 0.0% 18.9% 6.06e+04 10240 Riemann X [region]
+|   |-> 1.37e-01 sec 0.2% 100.0% 0.0% ------ 10240 Riemann hydro HLLE [for]
+|-> 1.53e-01 sec 0.2% 79.2% 0.0% 20.8% 6.71e+04 10240 Riemann Y [region]
+|   |-> 1.21e-01 sec 0.1% 100.0% 0.0% ------ 10240 Riemann hydro HLLE [for]
+|-> 1.52e-01 sec 0.2% 79.0% 0.0% 21.0% 6.73e+04 10240 Riemann Z [region]
+|   |-> 1.20e-01 sec 0.1% 100.0% 0.0% ------ 10240 Riemann hydro HLLE [for]
+|-> 1.45e-01 sec 0.2% 79.1% 0.0% 20.9% 7.07e+04 10240 Reconstruct X [region]
+|   |-> 5.81e-02 sec 0.1% 100.0% 0.0% ------ 5120 PLM X1 [for]
+|   |-> 5.64e-02 sec 0.1% 100.0% 0.0% ------ 5120 DonorCell X1 [for]
+|-> 1.42e-01 sec 0.2% 78.6% 0.0% 21.4% 7.22e+04 10240 Reconstruct Y [region]
+|   |-> 5.67e-02 sec 0.1% 100.0% 0.0% ------ 5120 PLM X2 [for]
+|   |-> 5.48e-02 sec 0.1% 100.0% 0.0% ------ 5120 DonorCell X2 [for]
+|-> 1.40e-01 sec 0.2% 78.5% 0.0% 21.5% 7.32e+04 10240 Reconstruct Z [region]
+|   |-> 5.53e-02 sec 0.1% 100.0% 0.0% ------ 5120 PLM X3 [for]
+|   |-> 5.45e-02 sec 0.1% 100.0% 0.0% ------ 5120 DonorCell X3 [for]
+|-> 1.34e-01 sec 0.2% 100.0% 0.0% ------ 10752 ConservedToPrimitive [for]
+|-> 1.31e-01 sec 0.2% 100.0% 0.0% ------ 5632 EstimateTimestep [reduce]
+|-> 1.30e-01 sec 0.2% 100.0% 0.0% ------ 1536 "cons"="cons" [copy]
+|-> 1.26e-01 sec 0.1% 100.0% 0.0% ------ 10240 UpdateMeshBlockData [for]
+|-> 5.41e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 18"="send buf 25" [copy]
+|-> 5.34e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 1"="send buf 0" [copy]
+|-> 5.31e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 6"="send buf 9" [copy]
+|-> 5.30e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 14"="send buf 17" [copy]
+|-> 5.28e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 10"="send buf 13" [copy]
+|-> 5.27e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 0"="send buf 1" [copy]
+|-> 5.27e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 19"="send buf 24" [copy]
+|-> 5.27e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 22"="send buf 21" [copy]
+|-> 5.27e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 20"="send buf 23" [copy]
+|-> 5.24e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 4"="send buf 5" [copy]
+|-> 5.20e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 2"="send buf 3" [copy]
+|-> 5.20e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 24"="send buf 19" [copy]
+|-> 5.19e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 23"="send buf 20" [copy]
+|-> 5.19e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 7"="send buf 8" [copy]
+|-> 5.19e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 21"="send buf 22" [copy]
+|-> 5.19e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 25"="send buf 18" [copy]
+|-> 5.17e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 15"="send buf 16" [copy]
+|-> 5.15e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 11"="send buf 12" [copy]
+|-> 5.15e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 8"="send buf 7" [copy]
+|-> 5.14e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 12"="send buf 11" [copy]
+|-> 5.14e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 16"="send buf 15" [copy]
+|-> 5.12e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 13"="send buf 10" [copy]
+|-> 5.12e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 9"="send buf 6" [copy]
+|-> 5.12e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 5"="send buf 4" [copy]
+|-> 5.10e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 17"="send buf 14" [copy]
+|-> 5.07e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 3"="send buf 2" [copy]
+|-> 4.26e-02 sec 0.0% 100.0% 0.0% ------ 5120 Kokkos::View::initialization [MakeFluxPack::sparse_assoc] [for]
+|-> 2.68e-02 sec 0.0% 100.0% 0.0% ------ 3072 Kokkos::View::initialization [MakePack::cv] [for]
+|-> 2.61e-02 sec 0.0% 100.0% 0.0% ------ 2560 "MakeFluxPack::sparse_assoc"="MakeFluxPack::sparse_assoc" [copy]
+|-> 2.47e-02 sec 0.0% 100.0% 0.0% ------ 1536 Kokkos::View::initialization [prim] [for]
+|-> 2.44e-02 sec 0.0% 100.0% 0.0% ------ 1536 Kokkos::View::initialization [cons] [for]
+|-> 2.07e-02 sec 0.0% 100.0% 0.0% ------ 3072 Kokkos::View::destruction [MakePack::cv] [for]
+|-> 1.83e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::cv] [for]
+|-> 1.74e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f1] [for]
+|-> 1.73e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f3] [for]
+|-> 1.71e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f2] [for]
+|-> 1.69e-02 sec 0.0% 100.0% 0.0% ------ 1536 "MakePack::cv"="MakePack::cv" [copy]
+|-> 1.59e-02 sec 0.0% 100.0% 0.0% ------ 20 FluxDivergenceMesh [for]
+|-> 1.36e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::f3] [for]
+|-> 1.27e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::f2] [for]
+|-> 1.26e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::cv] [for]
+|-> 1.25e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::f1] [for]
+|-> 1.16e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::cv"="MakeFluxPack::cv" [copy]
+|-> 1.03e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f2"="MakeFluxPack::f2" [copy]
+|-> 1.02e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f1"="MakeFluxPack::f1" [copy]
+|-> 1.02e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f3"="MakeFluxPack::f3" [copy]
+
+BOTTOM-UP TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <number of calls> <name> [type]
+=================== 
+|-> 2.69e+00 sec 3.1% 100.0% 0.0% ------ 279552 PackData 4D [for]
+|-> 2.67e+00 sec 3.1% 100.0% 0.0% ------ 279552 UnpackData 4D [for]
+|-> 3.78e-01 sec 0.4% 100.0% 0.0% ------ 30720 Riemann hydro HLLE [for]
+|   |-> 1.37e-01 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 10240 Riemann X [region]
+|   |-> 1.21e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10240 Riemann Y [region]
+|   |-> 1.20e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10240 Riemann Z [region]
+|-> 1.34e-01 sec 0.2% 100.0% 0.0% ------ 10752 ConservedToPrimitive [for]
+|-> 1.31e-01 sec 0.2% 100.0% 0.0% ------ 5632 EstimateTimestep [reduce]
+|-> 1.30e-01 sec 0.2% 100.0% 0.0% ------ 1536 "cons"="cons" [copy]
+|-> 1.26e-01 sec 0.1% 100.0% 0.0% ------ 10240 UpdateMeshBlockData [for]
+|-> 5.81e-02 sec 0.1% 100.0% 0.0% ------ 5120 PLM X1 [for]
+|   |-> 5.81e-02 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct X [region]
+|-> 5.67e-02 sec 0.1% 100.0% 0.0% ------ 5120 PLM X2 [for]
+|   |-> 5.67e-02 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct Y [region]
+|-> 5.64e-02 sec 0.1% 100.0% 0.0% ------ 5120 DonorCell X1 [for]
+|   |-> 5.64e-02 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct X [region]
+|-> 5.53e-02 sec 0.1% 100.0% 0.0% ------ 5120 PLM X3 [for]
+|   |-> 5.53e-02 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct Z [region]
+|-> 5.48e-02 sec 0.1% 100.0% 0.0% ------ 5120 DonorCell X2 [for]
+|   |-> 5.48e-02 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct Y [region]
+|-> 5.45e-02 sec 0.1% 100.0% 0.0% ------ 5120 DonorCell X3 [for]
+|   |-> 5.45e-02 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 5120 Reconstruct Z [region]
+|-> 5.41e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 18"="send buf 25" [copy]
+|-> 5.34e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 1"="send buf 0" [copy]
+|-> 5.31e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 6"="send buf 9" [copy]
+|-> 5.30e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 14"="send buf 17" [copy]
+|-> 5.28e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 10"="send buf 13" [copy]
+|-> 5.27e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 0"="send buf 1" [copy]
+|-> 5.27e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 19"="send buf 24" [copy]
+|-> 5.27e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 22"="send buf 21" [copy]
+|-> 5.27e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 20"="send buf 23" [copy]
+|-> 5.24e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 4"="send buf 5" [copy]
+|-> 5.20e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 2"="send buf 3" [copy]
+|-> 5.20e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 24"="send buf 19" [copy]
+|-> 5.19e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 23"="send buf 20" [copy]
+|-> 5.19e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 7"="send buf 8" [copy]
+|-> 5.19e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 21"="send buf 22" [copy]
+|-> 5.19e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 25"="send buf 18" [copy]
+|-> 5.17e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 15"="send buf 16" [copy]
+|-> 5.15e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 11"="send buf 12" [copy]
+|-> 5.15e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 8"="send buf 7" [copy]
+|-> 5.14e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 12"="send buf 11" [copy]
+|-> 5.14e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 16"="send buf 15" [copy]
+|-> 5.12e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 13"="send buf 10" [copy]
+|-> 5.12e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 9"="send buf 6" [copy]
+|-> 5.12e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 5"="send buf 4" [copy]
+|-> 5.10e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 17"="send buf 14" [copy]
+|-> 5.07e-02 sec 0.1% 100.0% 0.0% ------ 10752 "recv buf 3"="send buf 2" [copy]
+|-> 4.26e-02 sec 0.0% 100.0% 0.0% ------ 5120 Kokkos::View::initialization [MakeFluxPack::sparse_assoc] [for]
+|-> 3.19e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Riemann Z [region]
+|-> 3.19e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Riemann X [region]
+|-> 3.17e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Riemann Y [region]
+|-> 3.03e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Reconstruct Y [region]
+|-> 3.03e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Reconstruct X [region]
+|-> 3.01e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Reconstruct Z [region]
+|-> 2.68e-02 sec 0.0% 100.0% 0.0% ------ 3072 Kokkos::View::initialization [MakePack::cv] [for]
+|-> 2.61e-02 sec 0.0% 100.0% 0.0% ------ 2560 "MakeFluxPack::sparse_assoc"="MakeFluxPack::sparse_assoc" [copy]
+|-> 2.47e-02 sec 0.0% 100.0% 0.0% ------ 1536 Kokkos::View::initialization [prim] [for]
+|-> 2.44e-02 sec 0.0% 100.0% 0.0% ------ 1536 Kokkos::View::initialization [cons] [for]
+|-> 2.07e-02 sec 0.0% 100.0% 0.0% ------ 3072 Kokkos::View::destruction [MakePack::cv] [for]
+|-> 1.83e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::cv] [for]
+|-> 1.74e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f1] [for]
+|-> 1.73e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f3] [for]
+|-> 1.71e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f2] [for]
+|-> 1.69e-02 sec 0.0% 100.0% 0.0% ------ 1536 "MakePack::cv"="MakePack::cv" [copy]
+|-> 1.59e-02 sec 0.0% 100.0% 0.0% ------ 20 FluxDivergenceMesh [for]
+|-> 1.36e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::f3] [for]
+|-> 1.27e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::f2] [for]
+|-> 1.26e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::cv] [for]
+|-> 1.25e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::f1] [for]
+|-> 1.16e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::cv"="MakeFluxPack::cv" [copy]
+|-> 1.03e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f2"="MakeFluxPack::f2" [copy]
+|-> 1.02e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f1"="MakeFluxPack::f1" [copy]
+|-> 1.02e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f3"="MakeFluxPack::f3" [copy]
+
+KOKKOS HOST SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 625.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+  50.0% cons scratch
+  50.0% cons
+
+KOKKOS CUDA SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 1919404.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+
+Host process high water mark memory consumption: 224752 kB
+
+END KOKKOS PROFILING REPORT.
