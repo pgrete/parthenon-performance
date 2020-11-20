@@ -1,0 +1,828 @@
+PERFORMANCE LOG
+COMMENT: simple buffer pack baseline no packing numvar=5
+EXTRAARGS: Advection/num_vars=5 Advection/buffer_send_pack=false Advection/buffer_recv_pack=false Advection/buffer_set_pack=false
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0         5) numactl/2.0.13    9) intel/2020a
+  2) zlib/1.2.11           6) UCX/1.8.0        10) git/2.27.0
+  3) binutils/2.34         7) impi/2019.7.217
+  4) iccifort/2020.1.217   8) imkl/2020.1.217
+
+ 
+
+icpc (ICC) 19.1.1.217 20200306
+Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
+
+
+
+
+
+
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=2.3437499999999999e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=2.3437499999999999e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.24e+06
+cycle=2 time=4.6874999999999998e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.47e+19
+cycle=3 time=7.0312499999999993e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.15e+06
+cycle=4 time=9.3749999999999997e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.23e+06
+cycle=5 time=1.1718750000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.44e+06
+cycle=6 time=1.4062500000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.42e+06
+cycle=7 time=1.6406250000000001e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.26e+06
+cycle=8 time=1.8749999999999999e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.60e+06
+cycle=9 time=2.1093749999999998e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.56e+06
+cycle=10 time=2.3437499999999997e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.57e+06
+
+Driver completed.
+time=2.34e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 4.94e+00
+zone-cycles/wallsecond = 3.40e+06
+
+
+
+
+
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=2.3437499999999999e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=2.3437499999999999e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 1.78e+06
+cycle=2 time=4.6874999999999998e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.74e+19
+cycle=3 time=7.0312499999999993e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.48e+06
+cycle=4 time=9.3749999999999997e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.55e+06
+cycle=5 time=1.1718750000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.49e+06
+cycle=6 time=1.4062500000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.48e+06
+cycle=7 time=1.6406250000000001e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.64e+06
+cycle=8 time=1.8749999999999999e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.49e+06
+cycle=9 time=2.1093749999999998e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.75e+06
+cycle=10 time=2.3437499999999997e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.51e+06
+
+Driver completed.
+time=2.34e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 4.73e+00
+zone-cycles/wallsecond = 3.55e+06
+
+BEGIN KOKKOS PROFILING REPORT:
+TOTAL TIME: 7.77e+00 seconds
+TOP-DOWN TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <remainder> <kernels per second> <number of calls> <name> [type]
+=================== 
+|-> 8.22e-01 sec 10.6% 0.0% 0.0% 100.0% 0.00e+00 20 FluxDivergenceMesh [region]
+|-> 7.00e-01 sec 9.0% 0.0% 0.0% 100.0% 0.00e+00 1344 advection_package::PostFill [region]
+|-> 6.14e-01 sec 7.9% 0.0% 0.0% 100.0% 0.00e+00 20 UpdateMeshData [region]
+|-> 5.95e-01 sec 7.7% 20.9% 0.0% 7.6% 5.87e+04 1344 SendBoundaryBuffers [region]
+|   |-> 4.26e-01 sec 5.5% 0.0% 0.0% 100.0% 0.00e+00 34944 PackData 4D [region]
+|   |-> 1.94e-02 sec 0.3% 100.0% 0.0% ------ 1344 "recv buf 1"="send buf 0" [copy]
+|   |-> 1.92e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 2"="send buf 3" [copy]
+|   |-> 1.92e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 0"="send buf 1" [copy]
+|   |-> 1.92e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 3"="send buf 2" [copy]
+|   |-> 1.90e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 5"="send buf 4" [copy]
+|   |-> 1.90e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 4"="send buf 5" [copy]
+|   |-> 8.00e-04 sec 0.0% 100.0% 0.0% ------ 1344 "recv buf 9"="send buf 6" [copy]
+|   |-> 7.98e-04 sec 0.0% 100.0% 0.0% ------ 1344 "recv buf 6"="send buf 9" [copy]
+|-> 5.44e-01 sec 7.0% 100.0% 0.0% ------ 1280 x2 flux [for]
+|-> 5.40e-01 sec 6.9% 100.0% 0.0% ------ 1280 x3 flux [for]
+|-> 5.04e-01 sec 6.5% 0.0% 0.0% 100.0% 0.00e+00 1344 advection_package::PreFill [region]
+|-> 4.63e-01 sec 6.0% 0.0% 0.0% 100.0% 0.00e+00 1344 advection_package::SquareIt [region]
+|-> 4.62e-01 sec 5.9% 100.0% 0.0% ------ 1280 x1 flux [for]
+|-> 3.20e-01 sec 4.1% 0.0% 0.0% 3.3% 0.00e+00 1280 SetBoundaries [region]
+|   |-> 3.10e-01 sec 4.0% 0.0% 0.0% 100.0% 0.00e+00 33280 UnpackData 4D [region]
+|-> 3.02e-01 sec 3.9% 0.0% 0.0% 100.0% 0.00e+00 20 AverageMeshData [region]
+|-> 1.89e-01 sec 2.4% 100.0% 0.0% ------ 704 advection_package::EstimateTimestep [reduce]
+|-> 1.71e-01 sec 2.2% 100.0% 0.0% ------ 192 Kokkos::View::initialization [advected] [for]
+|-> 6.12e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX1] [for]
+|-> 6.10e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX2] [for]
+|-> 6.08e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX3] [for]
+|-> 6.06e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_advected] [for]
+|-> 6.06e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_12] [for]
+|-> 6.05e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_advected_sq] [for]
+|-> 6.03e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_37] [for]
+|-> 1.48e-02 sec 0.2% 0.0% 0.0% 100.0% 0.00e+00 1664 UnpackData 4D [region]
+|-> 2.64e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 4] [for]
+|-> 2.63e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 0] [for]
+|-> 2.63e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 1] [for]
+|-> 2.63e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 5] [for]
+|-> 2.61e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 3] [for]
+|-> 2.58e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 0] [for]
+|-> 2.58e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 4] [for]
+|-> 2.58e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 1] [for]
+|-> 2.57e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 2] [for]
+|-> 2.56e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 5] [for]
+|-> 2.56e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 2] [for]
+|-> 2.56e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 3] [for]
+
+BOTTOM-UP TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <number of calls> <name> [type]
+=================== 
+|-> 8.22e-01 sec 10.6% 0.0% 0.0% 0.0% 0.00e+00 20 FluxDivergenceMesh [region]
+|-> 7.00e-01 sec 9.0% 0.0% 0.0% 0.0% 0.00e+00 1344 advection_package::PostFill [region]
+|-> 6.14e-01 sec 7.9% 0.0% 0.0% 0.0% 0.00e+00 20 UpdateMeshData [region]
+|-> 5.44e-01 sec 7.0% 100.0% 0.0% ------ 1280 x2 flux [for]
+|-> 5.40e-01 sec 6.9% 100.0% 0.0% ------ 1280 x3 flux [for]
+|-> 5.04e-01 sec 6.5% 0.0% 0.0% 0.0% 0.00e+00 1344 advection_package::PreFill [region]
+|-> 4.63e-01 sec 6.0% 0.0% 0.0% 0.0% 0.00e+00 1344 advection_package::SquareIt [region]
+|-> 4.62e-01 sec 5.9% 100.0% 0.0% ------ 1280 x1 flux [for]
+|-> 4.26e-01 sec 5.5% 0.0% 0.0% 0.0% 0.00e+00 34944 PackData 4D [region]
+|   |-> 4.26e-01 sec 5.5% 0.0% 0.0% 0.0% 0.00e+00 34944 SendBoundaryBuffers [region]
+|-> 3.25e-01 sec 4.2% 0.0% 0.0% 0.0% 0.00e+00 34944 UnpackData 4D [region]
+|   |-> 3.10e-01 sec 4.0% 0.0% 0.0% 0.0% 0.00e+00 33280 SetBoundaries [region]
+|-> 3.02e-01 sec 3.9% 0.0% 0.0% 0.0% 0.00e+00 20 AverageMeshData [region]
+|-> 1.89e-01 sec 2.4% 100.0% 0.0% ------ 704 advection_package::EstimateTimestep [reduce]
+|-> 1.71e-01 sec 2.2% 100.0% 0.0% ------ 192 Kokkos::View::initialization [advected] [for]
+|-> 6.12e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX1] [for]
+|-> 6.10e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX2] [for]
+|-> 6.08e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX3] [for]
+|-> 6.06e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_advected] [for]
+|-> 6.06e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_12] [for]
+|-> 6.05e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_advected_sq] [for]
+|-> 6.03e-02 sec 0.8% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_37] [for]
+|-> 4.50e-02 sec 0.6% 0.0% 0.0% 0.0% 0.00e+00 1344 SendBoundaryBuffers [region]
+|-> 1.94e-02 sec 0.3% 100.0% 0.0% ------ 1344 "recv buf 1"="send buf 0" [copy]
+|   |-> 1.94e-02 sec 0.3% 100.0% 0.0% 0.0% 0.00e+00 1344 SendBoundaryBuffers [region]
+|-> 1.92e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 2"="send buf 3" [copy]
+|   |-> 1.92e-02 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 1344 SendBoundaryBuffers [region]
+|-> 1.92e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 0"="send buf 1" [copy]
+|   |-> 1.92e-02 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 1344 SendBoundaryBuffers [region]
+|-> 1.92e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 3"="send buf 2" [copy]
+|   |-> 1.92e-02 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 1344 SendBoundaryBuffers [region]
+|-> 1.90e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 5"="send buf 4" [copy]
+|   |-> 1.90e-02 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 1344 SendBoundaryBuffers [region]
+|-> 1.90e-02 sec 0.2% 100.0% 0.0% ------ 1344 "recv buf 4"="send buf 5" [copy]
+|   |-> 1.90e-02 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 1344 SendBoundaryBuffers [region]
+|-> 1.05e-02 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 1280 SetBoundaries [region]
+|-> 2.64e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 4] [for]
+|-> 2.63e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 0] [for]
+|-> 2.63e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 1] [for]
+|-> 2.63e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 5] [for]
+|-> 2.61e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 3] [for]
+|-> 2.58e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 0] [for]
+|-> 2.58e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 4] [for]
+|-> 2.58e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 1] [for]
+|-> 2.57e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 2] [for]
+|-> 2.56e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 5] [for]
+|-> 2.56e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 2] [for]
+|-> 2.56e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 3] [for]
+|-> 8.00e-04 sec 0.0% 100.0% 0.0% ------ 1344 "recv buf 9"="send buf 6" [copy]
+|   |-> 8.00e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1344 SendBoundaryBuffers [region]
+|-> 7.98e-04 sec 0.0% 100.0% 0.0% ------ 1344 "recv buf 6"="send buf 9" [copy]
+|   |-> 7.98e-04 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1344 SendBoundaryBuffers [region]
+
+KOKKOS HOST SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 1236650.8 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+  0.1% advected
+
+KOKKOS CUDA SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 0.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+
+Host process high water mark memory consumption: 1248268 kB
+
+END KOKKOS PROFILING REPORT.
