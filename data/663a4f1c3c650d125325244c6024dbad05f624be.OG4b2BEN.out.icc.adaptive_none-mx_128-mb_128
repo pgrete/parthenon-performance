@@ -1,0 +1,190 @@
+PERFORMANCE LOG
+COMMENT: simple buffer pack packing numvar=5 with var view in bnd struct
+EXTRAARGS: Advection/num_vars=5 Advection/buffer_send_pack=true  Advection/buffer_recv_pack=true  Advection/buffer_set_pack=true 
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0         5) numactl/2.0.13    9) intel/2020a
+  2) zlib/1.2.11           6) UCX/1.8.0        10) git/2.27.0
+  3) binutils/2.34         7) impi/2019.7.217
+  4) iccifort/2020.1.217   8) imkl/2020.1.217
+
+ 
+
+icpc (ICC) 19.1.1.217 20200306
+Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
+
+
+
+
+
+
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=2.3437499999999999e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=2.3437499999999999e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 4.56e+06
+cycle=2 time=4.6874999999999998e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 4.37e+19
+cycle=3 time=7.0312499999999993e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 5.01e+06
+cycle=4 time=9.3749999999999997e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 5.02e+06
+cycle=5 time=1.1718750000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 4.97e+06
+cycle=6 time=1.4062500000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 5.04e+06
+cycle=7 time=1.6406250000000001e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 5.07e+06
+cycle=8 time=1.8749999999999999e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 5.02e+06
+cycle=9 time=2.1093749999999998e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 5.05e+06
+cycle=10 time=2.3437499999999997e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 4.99e+06
+
+Driver completed.
+time=2.34e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 3.34e+00
+zone-cycles/wallsecond = 5.02e+06
+
+
+
+
+
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=2.3437499999999999e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=2.3437499999999999e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 4.56e+06
+cycle=2 time=4.6874999999999998e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 4.48e+19
+cycle=3 time=7.0312499999999993e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 5.10e+06
+cycle=4 time=9.3749999999999997e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 5.11e+06
+cycle=5 time=1.1718750000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 5.03e+06
+cycle=6 time=1.4062500000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 5.07e+06
+cycle=7 time=1.6406250000000001e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 4.95e+06
+cycle=8 time=1.8749999999999999e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 4.97e+06
+cycle=9 time=2.1093749999999998e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 4.91e+06
+cycle=10 time=2.3437499999999997e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 4.99e+06
+
+Driver completed.
+time=2.34e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 3.35e+00
+zone-cycles/wallsecond = 5.01e+06
+
+BEGIN KOKKOS PROFILING REPORT:
+TOTAL TIME: 4.54e+00 seconds
+TOP-DOWN TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <remainder> <kernels per second> <number of calls> <name> [type]
+=================== 
+|-> 6.35e-01 sec 14.0% 0.0% 0.0% 100.0% 0.00e+00 20 FluxDivergenceMesh [region]
+|-> 5.09e-01 sec 11.2% 0.0% 0.0% 100.0% 0.00e+00 21 advection_package::PostFill [region]
+|-> 4.26e-01 sec 9.4% 100.0% 0.0% ------ 20 x3 flux [for]
+|-> 4.15e-01 sec 9.2% 0.0% 0.0% 100.0% 0.00e+00 20 UpdateMeshData [region]
+|-> 3.75e-01 sec 8.3% 100.0% 0.0% ------ 20 x2 flux [for]
+|-> 3.28e-01 sec 7.2% 0.0% 0.0% 100.0% 0.00e+00 21 advection_package::SquareIt [region]
+|-> 3.27e-01 sec 7.2% 99.8% 0.0% 0.1% 1.83e+02 20 SendBoundaryBuffersInOne [region]
+|   |-> 3.27e-01 sec 7.2% 100.0% 0.0% ------ 20 SendBoundaryBuffers [for]
+|-> 3.24e-01 sec 7.1% 0.0% 0.0% 100.0% 0.00e+00 21 advection_package::PreFill [region]
+|-> 3.05e-01 sec 6.7% 100.0% 0.0% ------ 20 x1 flux [for]
+|-> 2.11e-01 sec 4.6% 0.0% 0.0% 100.0% 0.00e+00 20 AverageMeshData [region]
+|-> 2.06e-01 sec 4.5% 99.9% 0.0% 0.0% 2.92e+02 20 SetBoundariesInOne [region]
+|   |-> 2.05e-01 sec 4.5% 100.0% 0.0% ------ 20 SetBoundaries [for]
+|-> 1.83e-01 sec 4.0% 100.0% 0.0% ------ 11 advection_package::EstimateTimestep [reduce]
+|-> 6.65e-02 sec 1.5% 100.0% 0.0% ------ 3 Kokkos::View::initialization [advected] [for]
+|-> 2.51e-02 sec 0.6% 100.0% 0.0% ------ 1 Kokkos::View::initialization [advected.fluxX1] [for]
+|-> 2.30e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [advected.fluxX2] [for]
+|-> 2.22e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [advected.fluxX3] [for]
+|-> 2.14e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [one_minus_advected] [for]
+|-> 2.11e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [one_minus_advected_sq] [for]
+|-> 2.08e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_12] [for]
+|-> 2.06e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_37] [for]
+|-> 6.06e-03 sec 0.1% 23.3% 0.0% 0.7% 4.29e+03 1 SendBoundaryBuffers [region]
+|   |-> 4.60e-03 sec 0.1% 0.0% 0.0% 100.0% 0.00e+00 26 PackData 4D [region]
+|-> 2.33e-03 sec 0.1% 0.0% 0.0% 100.0% 0.00e+00 26 UnpackData 4D [region]
+|-> 8.68e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 2] [for]
+|-> 8.63e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 0] [for]
+|-> 8.63e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 0] [for]
+|-> 8.58e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 1] [for]
+|-> 8.52e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 1] [for]
+|-> 7.98e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 2] [for]
+|-> 7.93e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 3] [for]
+|-> 7.87e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 3] [for]
+|-> 7.86e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 5] [for]
+|-> 7.82e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 4] [for]
+|-> 7.79e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 4] [for]
+|-> 7.78e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 5] [for]
+
+BOTTOM-UP TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <number of calls> <name> [type]
+=================== 
+|-> 6.35e-01 sec 14.0% 0.0% 0.0% 0.0% 0.00e+00 20 FluxDivergenceMesh [region]
+|-> 5.09e-01 sec 11.2% 0.0% 0.0% 0.0% 0.00e+00 21 advection_package::PostFill [region]
+|-> 4.26e-01 sec 9.4% 100.0% 0.0% ------ 20 x3 flux [for]
+|-> 4.15e-01 sec 9.2% 0.0% 0.0% 0.0% 0.00e+00 20 UpdateMeshData [region]
+|-> 3.75e-01 sec 8.3% 100.0% 0.0% ------ 20 x2 flux [for]
+|-> 3.28e-01 sec 7.2% 0.0% 0.0% 0.0% 0.00e+00 21 advection_package::SquareIt [region]
+|-> 3.27e-01 sec 7.2% 100.0% 0.0% ------ 20 SendBoundaryBuffers [for]
+|   |-> 3.27e-01 sec 7.2% 100.0% 0.0% 0.0% 0.00e+00 20 SendBoundaryBuffersInOne [region]
+|-> 3.24e-01 sec 7.1% 0.0% 0.0% 0.0% 0.00e+00 21 advection_package::PreFill [region]
+|-> 3.05e-01 sec 6.7% 100.0% 0.0% ------ 20 x1 flux [for]
+|-> 2.11e-01 sec 4.6% 0.0% 0.0% 0.0% 0.00e+00 20 AverageMeshData [region]
+|-> 2.05e-01 sec 4.5% 100.0% 0.0% ------ 20 SetBoundaries [for]
+|   |-> 2.05e-01 sec 4.5% 100.0% 0.0% 0.0% 0.00e+00 20 SetBoundariesInOne [region]
+|-> 1.83e-01 sec 4.0% 100.0% 0.0% ------ 11 advection_package::EstimateTimestep [reduce]
+|-> 6.65e-02 sec 1.5% 100.0% 0.0% ------ 3 Kokkos::View::initialization [advected] [for]
+|-> 2.51e-02 sec 0.6% 100.0% 0.0% ------ 1 Kokkos::View::initialization [advected.fluxX1] [for]
+|-> 2.30e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [advected.fluxX2] [for]
+|-> 2.22e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [advected.fluxX3] [for]
+|-> 2.14e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [one_minus_advected] [for]
+|-> 2.11e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [one_minus_advected_sq] [for]
+|-> 2.08e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_12] [for]
+|-> 2.06e-02 sec 0.5% 100.0% 0.0% ------ 1 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_37] [for]
+|-> 4.60e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 26 PackData 4D [region]
+|   |-> 4.60e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 26 SendBoundaryBuffers [region]
+|-> 2.33e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 26 UnpackData 4D [region]
+|-> 8.68e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 2] [for]
+|-> 8.63e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 0] [for]
+|-> 8.63e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 0] [for]
+|-> 8.58e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 1] [for]
+|-> 8.52e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 1] [for]
+|-> 7.98e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 2] [for]
+|-> 7.93e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 3] [for]
+|-> 7.87e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 3] [for]
+|-> 7.86e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 5] [for]
+|-> 7.82e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 4] [for]
+|-> 7.79e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [send buf 4] [for]
+|-> 7.78e-04 sec 0.0% 100.0% 0.0% ------ 1 Kokkos::View::initialization [recv buf 5] [for]
+|-> 4.88e-04 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 40 Create bndinfo array [region]
+
+KOKKOS HOST SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 914330.7 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+  9.8% advected
+  9.8% advected.fluxX1
+  9.8% advected.fluxX2
+  9.8% advected.fluxX3
+  9.8% one_minus_advected
+  9.8% one_minus_advected_sq
+  9.8% one_minus_sqrt_one_minus_advected_sq_12
+  9.8% one_minus_sqrt_one_minus_advected_sq_37
+  9.8% advected
+  9.8% advected
+  0.1% send buf 0
+  0.1% recv buf 0
+  0.1% send buf 1
+  0.1% recv buf 1
+  0.1% send buf 2
+  0.1% recv buf 2
+  0.1% send buf 3
+  0.1% recv buf 3
+  0.1% send buf 4
+  0.1% recv buf 4
+  0.1% send buf 5
+  0.1% recv buf 5
+
+KOKKOS CUDA SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 0.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+
+Host process high water mark memory consumption: 919932 kB
+
+END KOKKOS PROFILING REPORT.
