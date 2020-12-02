@@ -1,0 +1,414 @@
+PERFORMANCE LOG
+COMMENT: simple buffer pack packing yes numvar=5 only active buffers
+EXTRAARGS: Advection/num_vars=5 Advection/buffer_send_pack=true  Advection/buffer_recv_pack=true  Advection/buffer_set_pack=true 
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0            28) util-linux/2.35
+  2) zlib/1.2.11              29) GLib/2.64.1
+  3) binutils/2.34            30) PCRE2/10.34
+  4) GCC/9.3.0                31) libpng/1.6.37
+  5) CUDA/11.0.207            32) expat/2.2.9
+  6) gcccuda/2020a            33) freetype/2.10.1
+  7) numactl/2.0.13           34) fontconfig/2.13.92
+  8) XZ/5.2.5                 35) xorg-macros/1.19.2
+  9) libxml2/2.9.10           36) X11/20200222
+ 10) libpciaccess/0.16        37) DBus/1.13.12
+ 11) hwloc/2.2.0              38) libevent/2.1.11
+ 12) UCX/1.9.0-gcccuda-2020a  39) gzip/1.10
+ 13) OpenMPI/4.0.3            40) lz4/1.9.2
+ 14) git/2.27.0               41) zstd/1.4.4
+ 15) bzip2/1.0.8              42) libdrm/2.4.100
+ 16) ncurses/6.2              43) libglvnd/1.2.0
+ 17) libreadline/8.0          44) libunwind/1.3.1
+ 18) Tcl/8.6.10               45) LLVM/9.0.1
+ 19) SQLite/3.31.1            46) Mesa/20.0.2
+ 20) GMP/6.2.0                47) libGLU/9.0.1
+ 21) libffi/3.3               48) NASM/2.14.02
+ 22) Python/3.8.2             49) libjpeg-turbo/2.0.4
+ 23) Szip/2.1.1               50) NSPR/4.25
+ 24) HDF5/1.12.0              51) NSS/3.51
+ 25) double-conversion/3.1.5  52) snappy/1.1.8
+ 26) gettext/0.20.1           53) JasPer/2.0.14
+ 27) PCRE/8.44                54) Qt5/5.14.1
+
+ 
+
+g++ (GCC) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2020 NVIDIA Corporation
+Built on Thu_Jun_11_22:26:38_PDT_2020
+Cuda compilation tools, release 11.0, V11.0.194
+Build cuda_11.0_bu.TC445_37.28540450_0
+
+
+
+
+
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=2.3437499999999999e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=2.3437499999999999e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.21e+06
+cycle=2 time=4.6874999999999998e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.36e+20
+cycle=3 time=7.0312499999999993e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.69e+07
+cycle=4 time=9.3749999999999997e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.71e+07
+cycle=5 time=1.1718750000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.71e+07
+cycle=6 time=1.4062500000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.72e+07
+cycle=7 time=1.6406250000000001e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.72e+07
+cycle=8 time=1.8749999999999999e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.72e+07
+cycle=9 time=2.1093749999999998e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.73e+07
+cycle=10 time=2.3437499999999997e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.73e+07
+
+Driver completed.
+time=2.34e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 6.18e-01
+zone-cycles/wallsecond = 2.71e+07
+
+
+
+
+
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=2.3437499999999999e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=2.3437499999999999e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 5.21e+04
+cycle=2 time=4.6874999999999998e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 1.05e+20
+cycle=3 time=7.0312499999999993e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 1.21e+07
+cycle=4 time=9.3749999999999997e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 1.21e+07
+cycle=5 time=1.1718750000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 1.21e+07
+cycle=6 time=1.4062500000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 1.21e+07
+cycle=7 time=1.6406250000000001e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 1.21e+07
+cycle=8 time=1.8749999999999999e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 1.21e+07
+cycle=9 time=2.1093749999999998e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 1.21e+07
+cycle=10 time=2.3437499999999997e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 1.21e+07
+
+Driver completed.
+time=2.34e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 1.39e+00
+zone-cycles/wallsecond = 1.21e+07
+
+BEGIN KOKKOS PROFILING REPORT:
+TOTAL TIME: 9.57e+01 seconds
+TOP-DOWN TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <remainder> <kernels per second> <number of calls> <name> [type]
+=================== 
+|-> 4.18e+01 sec 43.7% 3.7% 0.0% 0.0% 2.90e+03 1 Driver_Main [region]
+|   |-> 4.18e+01 sec 43.7% 3.7% 0.0% 66.4% 2.90e+03 10 MultiStage_Step [region]
+|   |   |-> 1.19e+01 sec 12.4% 0.9% 0.0% 99.1% 8.65e+02 40 Task_WeightedSumData [region]
+|   |   |   |-> 2.32e-02 sec 0.0% 100.0% 0.0% ------ 40 WeightedSumData [for]
+|   |   |   |-> 1.84e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakePack::cv] [for]
+|   |   |   |-> 1.73e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakePack::sparse_assoc] [for]
+|   |   |   |-> 1.72e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakePack::vector_component] [for]
+|   |   |   |-> 1.16e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakePack::cv"="MakePack::cv" [copy]
+|   |   |   |-> 1.09e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakePack::sparse_assoc"="MakePack::sparse_assoc" [copy]
+|   |   |   |-> 1.05e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakePack::vector_component"="MakePack::vector_component" [copy]
+|   |   |-> 9.14e-01 sec 1.0% 50.4% 0.0% 4.3% 5.04e+04 10240 Task_FillDerived [region]
+|   |   |   |-> 3.06e-01 sec 0.3% 51.6% 0.0% 48.4% 5.02e+04 10240 PostFillDerived [region]
+|   |   |   |   |-> 1.23e-01 sec 0.1% 100.0% 0.0% ------ 10240 advection_package::PostFill [for]
+|   |   |   |-> 2.87e-01 sec 0.3% 53.4% 0.0% 46.6% 5.34e+04 10240 PreFillDerived [region]
+|   |   |   |   |-> 1.19e-01 sec 0.1% 100.0% 0.0% ------ 10240 advection_package::PreFill [for]
+|   |   |   |-> 2.82e-01 sec 0.3% 53.2% 0.0% 46.8% 5.45e+04 10240 FillDerived [region]
+|   |   |       |-> 1.15e-01 sec 0.1% 100.0% 0.0% ------ 10240 advection_package::SquareIt [for]
+|   |   |-> 6.20e-01 sec 0.6% 87.1% 0.0% 12.9% 4.96e+04 10240 Task_Advection_CalculateFluxes [region]
+|   |   |   |-> 1.86e-01 sec 0.2% 100.0% 0.0% ------ 10240 x2 flux [for]
+|   |   |   |-> 1.82e-01 sec 0.2% 100.0% 0.0% ------ 10240 x3 flux [for]
+|   |   |   |-> 1.71e-01 sec 0.2% 100.0% 0.0% ------ 10240 x1 flux [for]
+|   |   |-> 1.12e-01 sec 0.1% 82.7% 0.0% 17.3% 4.59e+04 5120 Task_EstimateTimestep [region]
+|   |   |   |-> 9.23e-02 sec 0.1% 100.0% 0.0% ------ 5120 advection_package::EstimateTimestep [reduce]
+|   |   |-> 1.09e-01 sec 0.1% 46.2% 0.0% 0.2% 7.36e+02 20 Task_SendBoundaryBuffers_MeshData [region]
+|   |   |   |-> 6.28e-02 sec 0.1% 18.9% 0.0% 81.1% 9.56e+02 20 Create bndinfo array [region]
+|   |   |   |-> 3.84e-02 sec 0.0% 100.0% 0.0% ------ 20 SendBoundaryBuffers [for]
+|   |   |-> 6.21e-02 sec 0.1% 62.8% 0.0% 0.3% 1.29e+03 20 Task_SetBoundaries_MeshData [region]
+|   |   |   |-> 3.33e-02 sec 0.0% 31.1% 0.0% 68.9% 1.80e+03 20 Create bndinfo array [region]
+|   |   |   |-> 2.86e-02 sec 0.0% 100.0% 0.0% ------ 20 SetBoundaries [for]
+|   |   |-> 2.26e-02 sec 0.0% 0.0% 0.0% 44.3% 0.00e+00 20 Task_ReceiveBoundaryBuffers_MeshData [region]
+|   |   |   |-> 1.26e-02 sec 0.0% 0.0% 0.0% 100.0% 0.00e+00 10240 Task_ReceiveBoundaryBuffers_MeshBlockData [region]
+|   |   |-> 1.95e-02 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::destruction [boundary_info_mirror] [for]
+|   |   |-> 1.83e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::vector_component] [for]
+|   |   |-> 1.76e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::cv] [for]
+|   |   |-> 1.69e-02 sec 0.0% 100.0% 0.0% ------ 1024 Kokkos::View::initialization [advected] [for]
+|   |   |-> 1.69e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f1] [for]
+|   |   |-> 1.68e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f2] [for]
+|   |   |-> 1.67e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f3] [for]
+|   |   |-> 1.65e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::sparse_assoc] [for]
+|   |   |-> 1.39e-02 sec 0.0% 0.0% 0.0% 100.0% 0.00e+00 10240 Task_ClearBoundary [region]
+|   |   |-> 1.30e-02 sec 0.0% 0.0% 0.0% 100.0% 0.00e+00 10240 Task_StartReceiving [region]
+|   |   |-> 1.23e-02 sec 0.0% 100.0% 0.0% ------ 20 FluxDivergenceMesh [for]
+|   |   |-> 1.18e-02 sec 0.0% 0.0% 0.0% 100.0% 0.00e+00 10240 Task_SendFluxCorrection [region]
+|   |   |-> 1.17e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::cv"="MakeFluxPack::cv" [copy]
+|   |   |-> 1.06e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::sparse_assoc"="MakeFluxPack::sparse_assoc" [copy]
+|   |   |-> 1.05e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::vector_component"="MakeFluxPack::vector_component" [copy]
+|   |   |-> 1.03e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f3"="MakeFluxPack::f3" [copy]
+|   |   |-> 1.02e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f2"="MakeFluxPack::f2" [copy]
+|   |   |-> 9.96e-03 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f1"="MakeFluxPack::f1" [copy]
+|   |   |-> 9.78e-03 sec 0.0% 0.0% 0.0% 100.0% 0.00e+00 10240 Task_ApplyBoundaryConditionsOnCoarseOrFine [region]
+|-> 1.32e+01 sec 13.8% 3.9% 0.0% 0.9% 4.39e+03 1 Mesh::Initialize [region]
+|   |-> 1.23e+01 sec 12.8% 1.2% 0.0% 0.0% 1.38e+03 513 Task_FillDerived [region]
+|   |   |-> 4.09e+00 sec 4.3% 1.2% 0.0% 98.8% 1.38e+03 513 PreFillDerived [region]
+|   |   |-> 4.09e+00 sec 4.3% 1.2% 0.0% 98.8% 1.38e+03 513 PostFillDerived [region]
+|   |   |-> 4.09e+00 sec 4.3% 1.2% 0.0% 98.8% 1.38e+03 513 FillDerived [region]
+|   |-> 5.58e-01 sec 0.6% 34.0% 0.0% 66.0% 4.77e+04 512 Task_SendBoundaryBuffers_MeshBlockData [region]
+|   |   |-> 1.26e-01 sec 0.1% 100.0% 0.0% ------ 13312 PackData 4D [for]
+|   |-> 1.56e-01 sec 0.2% 81.6% 0.0% 18.4% 8.51e+04 512 Task_ReceiveAndSetBoundariesWithWait [region]
+|   |   |-> 1.28e-01 sec 0.1% 100.0% 0.0% ------ 13312 UnpackData 4D [for]
+|   |-> 4.87e-02 sec 0.1% 100.0% 0.0% ------ 512 "advected"="advected" [copy]
+|-> 5.52e-02 sec 0.1% 100.0% 0.0% ------ 4608 Kokkos::View::destruction [MakePack::cv] [for]
+|-> 1.27e-02 sec 0.0% 100.0% 0.0% ------ 1024 Kokkos::View::destruction [MakeFluxPack::f3] [for]
+|-> 1.19e-02 sec 0.0% 100.0% 0.0% ------ 1024 Kokkos::View::destruction [MakeFluxPack::f2] [for]
+|-> 1.18e-02 sec 0.0% 100.0% 0.0% ------ 1024 Kokkos::View::destruction [MakeFluxPack::f1] [for]
+|-> 1.18e-02 sec 0.0% 100.0% 0.0% ------ 1024 Kokkos::View::destruction [MakeFluxPack::cv] [for]
+|-> 1.11e-02 sec 0.0% 81.9% 0.0% 18.1% 4.59e+04 512 Task_EstimateTimestep [region]
+
+BOTTOM-UP TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <number of calls> <name> [type]
+=================== 
+|-> 2.77e+01 sec 29.0% 0.0% 0.0% 0.0% 0.00e+00 10 MultiStage_Step [region]
+|   |-> 2.77e+01 sec 29.0% 0.0% 0.0% 0.0% 0.00e+00 10 Driver_Main [region]
+|-> 1.18e+01 sec 12.3% 0.0% 0.0% 0.0% 0.00e+00 40 Task_WeightedSumData [region]
+|   |-> 1.18e+01 sec 12.3% 0.0% 0.0% 0.0% 0.00e+00 40 MultiStage_Step [region]
+|       |-> 1.18e+01 sec 12.3% 0.0% 0.0% 0.0% 0.00e+00 40 Driver_Main [region]
+|-> 4.19e+00 sec 4.4% 0.0% 0.0% 0.0% 0.00e+00 10753 PostFillDerived [region]
+|   |-> 4.19e+00 sec 4.4% 0.0% 0.0% 0.0% 0.00e+00 10753 Task_FillDerived [region]
+|       |-> 4.04e+00 sec 4.2% 0.0% 0.0% 0.0% 0.00e+00 513 Mesh::Initialize [region]
+|       |-> 1.48e-01 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|           |-> 1.48e-01 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 4.18e+00 sec 4.4% 0.0% 0.0% 0.0% 0.00e+00 10753 PreFillDerived [region]
+|   |-> 4.18e+00 sec 4.4% 0.0% 0.0% 0.0% 0.00e+00 10753 Task_FillDerived [region]
+|       |-> 4.05e+00 sec 4.2% 0.0% 0.0% 0.0% 0.00e+00 513 Mesh::Initialize [region]
+|       |-> 1.34e-01 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|           |-> 1.34e-01 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 4.17e+00 sec 4.4% 0.0% 0.0% 0.0% 0.00e+00 10753 FillDerived [region]
+|   |-> 4.17e+00 sec 4.4% 0.0% 0.0% 0.0% 0.00e+00 10753 Task_FillDerived [region]
+|       |-> 4.04e+00 sec 4.2% 0.0% 0.0% 0.0% 0.00e+00 513 Mesh::Initialize [region]
+|       |-> 1.32e-01 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|           |-> 1.32e-01 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 3.69e-01 sec 0.4% 0.0% 0.0% 0.0% 0.00e+00 512 Task_SendBoundaryBuffers_MeshBlockData [region]
+|   |-> 3.69e-01 sec 0.4% 0.0% 0.0% 0.0% 0.00e+00 512 Mesh::Initialize [region]
+|-> 1.86e-01 sec 0.2% 100.0% 0.0% ------ 10240 x2 flux [for]
+|   |-> 1.86e-01 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 10240 Task_Advection_CalculateFluxes [region]
+|       |-> 1.86e-01 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|           |-> 1.86e-01 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 1.82e-01 sec 0.2% 100.0% 0.0% ------ 10240 x3 flux [for]
+|   |-> 1.82e-01 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 10240 Task_Advection_CalculateFluxes [region]
+|       |-> 1.82e-01 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|           |-> 1.82e-01 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 1.71e-01 sec 0.2% 100.0% 0.0% ------ 10240 x1 flux [for]
+|   |-> 1.71e-01 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 10240 Task_Advection_CalculateFluxes [region]
+|       |-> 1.71e-01 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|           |-> 1.71e-01 sec 0.2% 100.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 1.30e-01 sec 0.1% 100.0% 0.0% ------ 10752 advection_package::PostFill [for]
+|   |-> 1.30e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10752 PostFillDerived [region]
+|       |-> 1.30e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10752 Task_FillDerived [region]
+|           |-> 1.23e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|           |   |-> 1.23e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 1.28e-01 sec 0.1% 100.0% 0.0% ------ 13312 UnpackData 4D [for]
+|   |-> 1.28e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 13312 Task_ReceiveAndSetBoundariesWithWait [region]
+|       |-> 1.28e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 13312 Mesh::Initialize [region]
+|-> 1.26e-01 sec 0.1% 100.0% 0.0% ------ 13312 PackData 4D [for]
+|   |-> 1.26e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 13312 Task_SendBoundaryBuffers_MeshBlockData [region]
+|       |-> 1.26e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 13312 Mesh::Initialize [region]
+|-> 1.26e-01 sec 0.1% 100.0% 0.0% ------ 10752 advection_package::PreFill [for]
+|   |-> 1.26e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10752 PreFillDerived [region]
+|       |-> 1.26e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10752 Task_FillDerived [region]
+|           |-> 1.19e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|           |   |-> 1.19e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 1.21e-01 sec 0.1% 100.0% 0.0% ------ 10752 advection_package::SquareIt [for]
+|   |-> 1.21e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10752 FillDerived [region]
+|       |-> 1.21e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10752 Task_FillDerived [region]
+|           |-> 1.15e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|           |   |-> 1.15e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 1.20e-01 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 1 Mesh::Initialize [region]
+|-> 1.01e-01 sec 0.1% 100.0% 0.0% ------ 5632 advection_package::EstimateTimestep [reduce]
+|   |-> 1.01e-01 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 5632 Task_EstimateTimestep [region]
+|       |-> 9.23e-02 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 5120 MultiStage_Step [region]
+|       |   |-> 9.23e-02 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 5120 Driver_Main [region]
+|-> 8.01e-02 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 10240 Task_Advection_CalculateFluxes [region]
+|   |-> 8.01e-02 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|       |-> 8.01e-02 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 7.46e-02 sec 0.1% 100.0% 0.0% ------ 9216 Kokkos::View::initialization [MakePack::cv] [for]
+|   |-> 1.84e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_WeightedSumData [region]
+|   |   |-> 1.84e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 MultiStage_Step [region]
+|   |       |-> 1.84e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Driver_Main [region]
+|   |-> 1.60e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 PostFillDerived [region]
+|   |   |-> 1.60e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_FillDerived [region]
+|   |-> 1.56e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 PreFillDerived [region]
+|   |   |-> 1.56e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_FillDerived [region]
+|   |-> 1.56e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 FillDerived [region]
+|   |   |-> 1.56e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_FillDerived [region]
+|-> 7.39e-02 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 40 Create bndinfo array [region]
+|   |-> 5.09e-02 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 20 Task_SendBoundaryBuffers_MeshData [region]
+|   |   |-> 5.09e-02 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|   |       |-> 5.09e-02 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|   |-> 2.30e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 Task_SetBoundaries_MeshData [region]
+|       |-> 2.30e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|           |-> 2.30e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|-> 6.95e-02 sec 0.1% 100.0% 0.0% ------ 9216 Kokkos::View::initialization [MakePack::sparse_assoc] [for]
+|   |-> 1.73e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_WeightedSumData [region]
+|   |   |-> 1.73e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 MultiStage_Step [region]
+|   |       |-> 1.73e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Driver_Main [region]
+|   |-> 1.45e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 FillDerived [region]
+|   |   |-> 1.45e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_FillDerived [region]
+|   |-> 1.45e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 PreFillDerived [region]
+|   |   |-> 1.45e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_FillDerived [region]
+|   |-> 1.45e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 PostFillDerived [region]
+|   |   |-> 1.45e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_FillDerived [region]
+|-> 6.88e-02 sec 0.1% 100.0% 0.0% ------ 9216 Kokkos::View::initialization [MakePack::vector_component] [for]
+|   |-> 1.72e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_WeightedSumData [region]
+|   |   |-> 1.72e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 MultiStage_Step [region]
+|   |       |-> 1.72e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Driver_Main [region]
+|   |-> 1.44e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 PreFillDerived [region]
+|   |   |-> 1.44e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_FillDerived [region]
+|   |-> 1.44e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 PostFillDerived [region]
+|   |   |-> 1.44e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_FillDerived [region]
+|   |-> 1.44e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 FillDerived [region]
+|   |   |-> 1.44e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Task_FillDerived [region]
+|-> 5.99e-02 sec 0.1% 100.0% 0.0% ------ 9216 Kokkos::View::destruction [MakePack::cv] [for]
+|-> 4.87e-02 sec 0.1% 100.0% 0.0% ------ 512 "advected"="advected" [copy]
+|   |-> 4.87e-02 sec 0.1% 100.0% 0.0% 0.0% 0.00e+00 512 Mesh::Initialize [region]
+|-> 4.85e-02 sec 0.1% 100.0% 0.0% ------ 4608 "MakePack::cv"="MakePack::cv" [copy]
+|   |-> 1.16e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_WeightedSumData [region]
+|   |   |-> 1.16e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 MultiStage_Step [region]
+|   |       |-> 1.16e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Driver_Main [region]
+|   |-> 1.04e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 PostFillDerived [region]
+|   |   |-> 1.04e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_FillDerived [region]
+|   |-> 1.04e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 PreFillDerived [region]
+|   |   |-> 1.04e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_FillDerived [region]
+|   |-> 1.04e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 FillDerived [region]
+|   |   |-> 1.04e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_FillDerived [region]
+|-> 4.62e-02 sec 0.0% 100.0% 0.0% ------ 4608 "MakePack::sparse_assoc"="MakePack::sparse_assoc" [copy]
+|   |-> 1.09e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_WeightedSumData [region]
+|   |   |-> 1.09e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 MultiStage_Step [region]
+|   |       |-> 1.09e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Driver_Main [region]
+|   |-> 9.99e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 PostFillDerived [region]
+|   |   |-> 9.99e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_FillDerived [region]
+|   |-> 9.98e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 PreFillDerived [region]
+|   |   |-> 9.98e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_FillDerived [region]
+|   |-> 9.97e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 FillDerived [region]
+|   |   |-> 9.97e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_FillDerived [region]
+|-> 4.53e-02 sec 0.0% 100.0% 0.0% ------ 4608 "MakePack::vector_component"="MakePack::vector_component" [copy]
+|   |-> 1.05e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_WeightedSumData [region]
+|   |   |-> 1.05e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 MultiStage_Step [region]
+|   |       |-> 1.05e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Driver_Main [region]
+|   |-> 9.87e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 PostFillDerived [region]
+|   |   |-> 9.87e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_FillDerived [region]
+|   |-> 9.81e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 FillDerived [region]
+|   |   |-> 9.81e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_FillDerived [region]
+|   |-> 9.79e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 PreFillDerived [region]
+|   |   |-> 9.79e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Task_FillDerived [region]
+|-> 4.13e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10753 Task_FillDerived [region]
+|   |-> 3.92e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|   |   |-> 3.92e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 3.84e-02 sec 0.0% 100.0% 0.0% ------ 20 SendBoundaryBuffers [for]
+|   |-> 3.84e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 Task_SendBoundaryBuffers_MeshData [region]
+|       |-> 3.84e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|           |-> 3.84e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|-> 2.89e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [advected] [for]
+|   |-> 1.69e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 MultiStage_Step [region]
+|   |   |-> 1.69e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Driver_Main [region]
+|-> 2.88e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 512 Task_ReceiveAndSetBoundariesWithWait [region]
+|   |-> 2.88e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 512 Mesh::Initialize [region]
+|-> 2.86e-02 sec 0.0% 100.0% 0.0% ------ 20 SetBoundaries [for]
+|   |-> 2.86e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 Task_SetBoundaries_MeshData [region]
+|       |-> 2.86e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|           |-> 2.86e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|-> 2.32e-02 sec 0.0% 100.0% 0.0% ------ 40 WeightedSumData [for]
+|   |-> 2.32e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 40 Task_WeightedSumData [region]
+|       |-> 2.32e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 40 MultiStage_Step [region]
+|           |-> 2.32e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 40 Driver_Main [region]
+|-> 2.13e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 5632 Task_EstimateTimestep [region]
+|   |-> 1.93e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 5120 MultiStage_Step [region]
+|   |   |-> 1.93e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 5120 Driver_Main [region]
+|-> 1.95e-02 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::destruction [boundary_info_mirror] [for]
+|   |-> 1.95e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 40 MultiStage_Step [region]
+|       |-> 1.95e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 40 Driver_Main [region]
+|-> 1.83e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::vector_component] [for]
+|   |-> 1.83e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 MultiStage_Step [region]
+|       |-> 1.83e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Driver_Main [region]
+|-> 1.76e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::cv] [for]
+|   |-> 1.76e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 MultiStage_Step [region]
+|       |-> 1.76e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Driver_Main [region]
+|-> 1.69e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f1] [for]
+|   |-> 1.69e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 MultiStage_Step [region]
+|       |-> 1.69e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Driver_Main [region]
+|-> 1.68e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f2] [for]
+|   |-> 1.68e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 MultiStage_Step [region]
+|       |-> 1.68e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Driver_Main [region]
+|-> 1.67e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::f3] [for]
+|   |-> 1.67e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 MultiStage_Step [region]
+|       |-> 1.67e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Driver_Main [region]
+|-> 1.65e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::initialization [MakeFluxPack::sparse_assoc] [for]
+|   |-> 1.65e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 MultiStage_Step [region]
+|       |-> 1.65e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 2048 Driver_Main [region]
+|-> 1.47e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10752 Task_ClearBoundary [region]
+|   |-> 1.39e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|   |   |-> 1.39e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 1.37e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::f3] [for]
+|-> 1.35e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10752 Task_StartReceiving [region]
+|   |-> 1.30e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|   |   |-> 1.30e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 1.29e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::f2] [for]
+|-> 1.29e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::cv] [for]
+|-> 1.29e-02 sec 0.0% 100.0% 0.0% ------ 2048 Kokkos::View::destruction [MakeFluxPack::f1] [for]
+|-> 1.26e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Task_ReceiveBoundaryBuffers_MeshBlockData [region]
+|   |-> 1.26e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Task_ReceiveBoundaryBuffers_MeshData [region]
+|       |-> 1.26e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|           |-> 1.26e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 1.24e-02 sec 0.0% 100.0% 0.0% ------ 40 "boundary_info"="boundary_info_mirror" [copy]
+|   |-> 1.24e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 40 Create bndinfo array [region]
+|-> 1.23e-02 sec 0.0% 100.0% 0.0% ------ 20 FluxDivergenceMesh [for]
+|   |-> 1.23e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|       |-> 1.23e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|-> 1.18e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Task_SendFluxCorrection [region]
+|   |-> 1.18e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|       |-> 1.18e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 1.17e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::cv"="MakeFluxPack::cv" [copy]
+|   |-> 1.17e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 MultiStage_Step [region]
+|       |-> 1.17e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Driver_Main [region]
+|-> 1.06e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::sparse_assoc"="MakeFluxPack::sparse_assoc" [copy]
+|   |-> 1.06e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 MultiStage_Step [region]
+|       |-> 1.06e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Driver_Main [region]
+|-> 1.05e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::vector_component"="MakeFluxPack::vector_component" [copy]
+|   |-> 1.05e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 MultiStage_Step [region]
+|       |-> 1.05e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Driver_Main [region]
+|-> 1.04e-02 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10752 Task_ApplyBoundaryConditionsOnCoarseOrFine [region]
+|   |-> 9.78e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 MultiStage_Step [region]
+|   |   |-> 9.78e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 10240 Driver_Main [region]
+|-> 1.03e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f3"="MakeFluxPack::f3" [copy]
+|   |-> 1.03e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 MultiStage_Step [region]
+|       |-> 1.03e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Driver_Main [region]
+|-> 1.02e-02 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f2"="MakeFluxPack::f2" [copy]
+|   |-> 1.02e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 MultiStage_Step [region]
+|       |-> 1.02e-02 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Driver_Main [region]
+|-> 9.99e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 Task_ReceiveBoundaryBuffers_MeshData [region]
+|   |-> 9.99e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|       |-> 9.99e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|-> 9.96e-03 sec 0.0% 100.0% 0.0% ------ 1024 "MakeFluxPack::f1"="MakeFluxPack::f1" [copy]
+|   |-> 9.96e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 MultiStage_Step [region]
+|       |-> 9.96e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 1024 Driver_Main [region]
+
+KOKKOS HOST SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 1144.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+  100.0% Driver_Main/MultiStage_Step/Task_SendBoundaryBuffers_MeshData/Create bndinfo array/boundary_info_mirror
+
+KOKKOS CUDA SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 1768584.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+  0.3% Driver_Main/MultiStage_Step/Task_Advection_CalculateFluxes/x2 flux/CudaSpace::ScratchMemory
+
+Host process high water mark memory consumption: 261432 kB
+
+END KOKKOS PROFILING REPORT.

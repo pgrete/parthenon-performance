@@ -1,0 +1,929 @@
+PERFORMANCE LOG
+COMMENT: simple buffer pack packing yes numvar=5 only active buffers
+EXTRAARGS: Advection/num_vars=5 Advection/buffer_send_pack=true  Advection/buffer_recv_pack=true  Advection/buffer_set_pack=true 
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0         5) numactl/2.0.13    9) intel/2020a
+  2) zlib/1.2.11           6) UCX/1.8.0        10) git/2.27.0
+  3) binutils/2.34         7) impi/2019.7.217
+  4) iccifort/2020.1.217   8) imkl/2020.1.217
+
+ 
+
+icpc (ICC) 19.1.1.217 20200306
+Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
+
+
+
+
+
+
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=2.3437499999999999e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=2.3437499999999999e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.17e+06
+cycle=2 time=4.6874999999999998e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.36e+19
+cycle=3 time=7.0312499999999993e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.18e+06
+cycle=4 time=9.3749999999999997e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.27e+06
+cycle=5 time=1.1718750000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.38e+06
+cycle=6 time=1.4062500000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.45e+06
+cycle=7 time=1.6406250000000001e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.29e+06
+cycle=8 time=1.8749999999999999e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.60e+06
+cycle=9 time=2.1093749999999998e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.54e+06
+cycle=10 time=2.3437499999999997e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.43e+06
+
+Driver completed.
+time=2.34e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 4.95e+00
+zone-cycles/wallsecond = 3.39e+06
+
+
+
+
+
+
+
+Setup complete, executing driver...
+
+cycle=0 time=0.0000000000000000e+00 dt=2.3437499999999999e-03 zone-cycles/wsec = 0.00e+00
+cycle=1 time=2.3437499999999999e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 1.90e+06
+cycle=2 time=4.6874999999999998e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 2.83e+19
+cycle=3 time=7.0312499999999993e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.32e+06
+cycle=4 time=9.3749999999999997e-03 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.50e+06
+cycle=5 time=1.1718750000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.28e+06
+cycle=6 time=1.4062500000000000e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.44e+06
+cycle=7 time=1.6406250000000001e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.53e+06
+cycle=8 time=1.8749999999999999e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.51e+06
+cycle=9 time=2.1093749999999998e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.52e+06
+cycle=10 time=2.3437499999999997e-02 dt=2.3437499999999999e-03 zone-cycles/wsec = 3.49e+06
+
+Driver completed.
+time=2.34e-02 cycle=10
+tlim=1.00e+00 nlim=10
+
+walltime used = 4.87e+00
+zone-cycles/wallsecond = 3.45e+06
+
+BEGIN KOKKOS PROFILING REPORT:
+TOTAL TIME: 7.82e+00 seconds
+TOP-DOWN TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <remainder> <kernels per second> <number of calls> <name> [type]
+=================== 
+|-> 6.63e+00 sec 84.7% 41.9% 0.0% 0.0% 1.30e+03 1 Driver_Main [region]
+|   |-> 6.63e+00 sec 84.7% 41.9% 0.0% 4.5% 1.30e+03 10 MultiStage_Step [region]
+|   |   |-> 1.62e+00 sec 20.7% 0.0% 0.0% 0.0% 7.11e+02 1280 Task_FillDerived [region]
+|   |   |   |-> 6.64e-01 sec 8.5% 0.0% 0.0% 1.2% 5.78e+02 1280 PostFillDerived [region]
+|   |   |   |   |-> 6.57e-01 sec 8.4% 0.0% 0.0% 100.0% 0.00e+00 1280 advection_package::PostFill [region]
+|   |   |   |-> 5.10e-01 sec 6.5% 0.0% 0.0% 1.1% 7.53e+02 1280 PreFillDerived [region]
+|   |   |   |   |-> 5.05e-01 sec 6.5% 0.0% 0.0% 100.0% 0.00e+00 1280 advection_package::PreFill [region]
+|   |   |   |-> 4.45e-01 sec 5.7% 0.0% 0.0% 1.1% 8.62e+02 1280 FillDerived [region]
+|   |   |       |-> 4.40e-01 sec 5.6% 0.0% 0.0% 100.0% 0.00e+00 1280 advection_package::SquareIt [region]
+|   |   |-> 1.54e+00 sec 19.7% 99.7% 0.0% 0.3% 2.49e+03 1280 Task_Advection_CalculateFluxes [region]
+|   |   |   |-> 5.46e-01 sec 7.0% 100.0% 0.0% ------ 1280 x2 flux [for]
+|   |   |   |-> 5.30e-01 sec 6.8% 100.0% 0.0% ------ 1280 x3 flux [for]
+|   |   |   |-> 4.58e-01 sec 5.9% 100.0% 0.0% ------ 1280 x1 flux [for]
+|   |   |-> 1.10e+00 sec 14.0% 0.0% 0.0% 11.0% 7.07e+02 40 Task_WeightedSumData [region]
+|   |   |   |-> 9.76e-01 sec 12.5% 0.0% 0.0% 100.0% 0.00e+00 40 WeightedSumData [region]
+|   |   |-> 8.01e-01 sec 10.2% 0.0% 0.0% 100.0% 0.00e+00 20 FluxDivergenceMesh [region]
+|   |   |-> 6.49e-01 sec 8.3% 97.3% 0.0% 0.0% 9.25e+01 20 Task_SendBoundaryBuffers_MeshData [region]
+|   |   |   |-> 6.30e-01 sec 8.1% 100.0% 0.0% ------ 20 SendBoundaryBuffers [for]
+|   |   |   |-> 1.67e-02 sec 0.2% 4.3% 0.0% 95.7% 2.40e+03 20 Create bndinfo array [region]
+|   |   |   |-> 1.61e-03 sec 0.0% 0.0% 0.0% 100.0% 0.00e+00 20 Set complete and/or start sending via MPI [region]
+|   |   |-> 3.37e-01 sec 4.3% 99.6% 0.0% 0.0% 1.78e+02 20 Task_SetBoundaries_MeshData [region]
+|   |   |   |-> 3.35e-01 sec 4.3% 100.0% 0.0% ------ 20 SetBoundaries [for]
+|   |   |   |-> 1.68e-03 sec 0.0% 17.7% 0.0% 82.3% 2.38e+04 20 Create bndinfo array [region]
+|   |   |-> 1.66e-01 sec 2.1% 99.4% 0.0% 0.6% 3.86e+03 640 Task_EstimateTimestep [region]
+|   |   |   |-> 1.65e-01 sec 2.1% 100.0% 0.0% ------ 640 advection_package::EstimateTimestep [reduce]
+|   |   |-> 1.09e-01 sec 1.4% 100.0% 0.0% ------ 128 Kokkos::View::initialization [advected] [for]
+|   |   |-> 3.47e-03 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::destruction [boundary_info] [for]
+|   |   |-> 1.62e-03 sec 0.0% 0.0% 0.0% 100.0% 0.00e+00 1280 Task_ClearBoundary [region]
+|   |   |-> 1.27e-03 sec 0.0% 0.0% 0.0% 100.0% 0.00e+00 1280 Task_StartReceiving [region]
+|   |   |-> 1.14e-03 sec 0.0% 0.0% 0.0% 100.0% 0.00e+00 1280 Task_SendFluxCorrection [region]
+|   |   |-> 8.24e-04 sec 0.0% 0.0% 0.0% 16.8% 0.00e+00 20 Task_ReceiveBoundaryBuffers_MeshData [region]
+|-> 3.01e-01 sec 3.9% 1.6% 0.0% 17.6% 9.55e+03 1 Mesh::Initialize [region]
+|   |-> 2.08e-01 sec 2.7% 0.1% 0.0% 0.0% 5.53e+03 65 Task_FillDerived [region]
+|   |   |-> 7.27e-02 sec 0.9% 0.1% 0.0% 61.8% 5.28e+03 65 PostFillDerived [region]
+|   |   |   |-> 2.77e-02 sec 0.4% 0.0% 0.0% 100.0% 0.00e+00 64 advection_package::PostFill [region]
+|   |   |-> 6.80e-02 sec 0.9% 0.1% 0.0% 70.7% 5.65e+03 65 FillDerived [region]
+|   |   |   |-> 1.99e-02 sec 0.3% 0.0% 0.0% 100.0% 0.00e+00 64 advection_package::SquareIt [region]
+|   |   |-> 6.75e-02 sec 0.9% 0.1% 0.0% 67.0% 5.69e+03 65 PreFillDerived [region]
+|   |       |-> 2.22e-02 sec 0.3% 0.0% 0.0% 100.0% 0.00e+00 64 advection_package::PreFill [region]
+|   |-> 2.53e-02 sec 0.3% 18.9% 0.0% 6.8% 6.57e+04 64 Task_SendBoundaryBuffers_MeshBlockData [region]
+|   |   |-> 1.88e-02 sec 0.2% 0.0% 0.0% 100.0% 0.00e+00 1664 PackData 4D [region]
+|   |-> 1.48e-02 sec 0.2% 0.0% 0.0% 3.4% 0.00e+00 64 Task_ReceiveAndSetBoundariesWithWait [region]
+|   |   |-> 1.43e-02 sec 0.2% 0.0% 0.0% 100.0% 0.00e+00 1664 UnpackData 4D [region]
+|-> 5.83e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX1] [for]
+|-> 5.82e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected] [for]
+|-> 5.81e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX2] [for]
+|-> 5.81e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX3] [for]
+|-> 5.80e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_advected] [for]
+|-> 5.80e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_advected_sq] [for]
+|-> 5.78e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_12] [for]
+|-> 5.76e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_37] [for]
+|-> 1.63e-02 sec 0.2% 99.5% 0.0% 0.5% 3.93e+03 64 Task_EstimateTimestep [region]
+|   |-> 1.62e-02 sec 0.2% 100.0% 0.0% ------ 64 advection_package::EstimateTimestep [reduce]
+|-> 2.52e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 1] [for]
+|-> 2.52e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 5] [for]
+|-> 2.50e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 0] [for]
+|-> 2.49e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 2] [for]
+|-> 2.48e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 0] [for]
+|-> 2.48e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 4] [for]
+|-> 2.46e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 3] [for]
+|-> 2.46e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 3] [for]
+|-> 2.45e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 1] [for]
+|-> 2.45e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 5] [for]
+|-> 2.45e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 4] [for]
+|-> 2.45e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 2] [for]
+
+BOTTOM-UP TIME TREE:
+<average time> <percent of total time> <percent time in Kokkos> <percent MPI imbalance> <number of calls> <name> [type]
+=================== 
+|-> 9.76e-01 sec 12.5% 0.0% 0.0% 0.0% 0.00e+00 40 WeightedSumData [region]
+|   |-> 9.76e-01 sec 12.5% 0.0% 0.0% 0.0% 0.00e+00 40 Task_WeightedSumData [region]
+|       |-> 9.76e-01 sec 12.5% 0.0% 0.0% 0.0% 0.00e+00 40 MultiStage_Step [region]
+|           |-> 9.76e-01 sec 12.5% 0.0% 0.0% 0.0% 0.00e+00 40 Driver_Main [region]
+|-> 8.01e-01 sec 10.2% 0.0% 0.0% 0.0% 0.00e+00 20 FluxDivergenceMesh [region]
+|   |-> 8.01e-01 sec 10.2% 0.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|       |-> 8.01e-01 sec 10.2% 0.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|-> 6.84e-01 sec 8.7% 0.0% 0.0% 0.0% 0.00e+00 1344 advection_package::PostFill [region]
+|   |-> 6.84e-01 sec 8.7% 0.0% 0.0% 0.0% 0.00e+00 1344 PostFillDerived [region]
+|       |-> 6.84e-01 sec 8.7% 0.0% 0.0% 0.0% 0.00e+00 1344 Task_FillDerived [region]
+|           |-> 6.57e-01 sec 8.4% 0.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|           |   |-> 6.57e-01 sec 8.4% 0.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|           |-> 2.77e-02 sec 0.4% 0.0% 0.0% 0.0% 0.00e+00 64 Mesh::Initialize [region]
+|-> 6.30e-01 sec 8.1% 100.0% 0.0% ------ 20 SendBoundaryBuffers [for]
+|   |-> 6.30e-01 sec 8.1% 100.0% 0.0% 0.0% 0.00e+00 20 Task_SendBoundaryBuffers_MeshData [region]
+|       |-> 6.30e-01 sec 8.1% 100.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|           |-> 6.30e-01 sec 8.1% 100.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|-> 5.46e-01 sec 7.0% 100.0% 0.0% ------ 1280 x2 flux [for]
+|   |-> 5.46e-01 sec 7.0% 100.0% 0.0% 0.0% 0.00e+00 1280 Task_Advection_CalculateFluxes [region]
+|       |-> 5.46e-01 sec 7.0% 100.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|           |-> 5.46e-01 sec 7.0% 100.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|-> 5.30e-01 sec 6.8% 100.0% 0.0% ------ 1280 x3 flux [for]
+|   |-> 5.30e-01 sec 6.8% 100.0% 0.0% 0.0% 0.00e+00 1280 Task_Advection_CalculateFluxes [region]
+|       |-> 5.30e-01 sec 6.8% 100.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|           |-> 5.30e-01 sec 6.8% 100.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|-> 5.27e-01 sec 6.7% 0.0% 0.0% 0.0% 0.00e+00 1344 advection_package::PreFill [region]
+|   |-> 5.27e-01 sec 6.7% 0.0% 0.0% 0.0% 0.00e+00 1344 PreFillDerived [region]
+|       |-> 5.27e-01 sec 6.7% 0.0% 0.0% 0.0% 0.00e+00 1344 Task_FillDerived [region]
+|           |-> 5.05e-01 sec 6.5% 0.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|           |   |-> 5.05e-01 sec 6.5% 0.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|           |-> 2.22e-02 sec 0.3% 0.0% 0.0% 0.0% 0.00e+00 64 Mesh::Initialize [region]
+|-> 4.60e-01 sec 5.9% 0.0% 0.0% 0.0% 0.00e+00 1344 advection_package::SquareIt [region]
+|   |-> 4.60e-01 sec 5.9% 0.0% 0.0% 0.0% 0.00e+00 1344 FillDerived [region]
+|       |-> 4.60e-01 sec 5.9% 0.0% 0.0% 0.0% 0.00e+00 1344 Task_FillDerived [region]
+|           |-> 4.40e-01 sec 5.6% 0.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|           |   |-> 4.40e-01 sec 5.6% 0.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|           |-> 1.99e-02 sec 0.3% 0.0% 0.0% 0.0% 0.00e+00 64 Mesh::Initialize [region]
+|-> 4.58e-01 sec 5.9% 100.0% 0.0% ------ 1280 x1 flux [for]
+|   |-> 4.58e-01 sec 5.9% 100.0% 0.0% 0.0% 0.00e+00 1280 Task_Advection_CalculateFluxes [region]
+|       |-> 4.58e-01 sec 5.9% 100.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|           |-> 4.58e-01 sec 5.9% 100.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|-> 3.35e-01 sec 4.3% 100.0% 0.0% ------ 20 SetBoundaries [for]
+|   |-> 3.35e-01 sec 4.3% 100.0% 0.0% 0.0% 0.00e+00 20 Task_SetBoundaries_MeshData [region]
+|       |-> 3.35e-01 sec 4.3% 100.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|           |-> 3.35e-01 sec 4.3% 100.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|-> 2.99e-01 sec 3.8% 0.0% 0.0% 0.0% 0.00e+00 10 MultiStage_Step [region]
+|   |-> 2.99e-01 sec 3.8% 0.0% 0.0% 0.0% 0.00e+00 10 Driver_Main [region]
+|-> 1.81e-01 sec 2.3% 100.0% 0.0% ------ 704 advection_package::EstimateTimestep [reduce]
+|   |-> 1.81e-01 sec 2.3% 100.0% 0.0% 0.0% 0.00e+00 704 Task_EstimateTimestep [region]
+|       |-> 1.65e-01 sec 2.1% 100.0% 0.0% 0.0% 0.00e+00 640 MultiStage_Step [region]
+|       |   |-> 1.65e-01 sec 2.1% 100.0% 0.0% 0.0% 0.00e+00 640 Driver_Main [region]
+|-> 1.67e-01 sec 2.1% 100.0% 0.0% ------ 192 Kokkos::View::initialization [advected] [for]
+|   |-> 1.09e-01 sec 1.4% 100.0% 0.0% 0.0% 0.00e+00 128 MultiStage_Step [region]
+|   |   |-> 1.09e-01 sec 1.4% 100.0% 0.0% 0.0% 0.00e+00 128 Driver_Main [region]
+|-> 1.21e-01 sec 1.5% 0.0% 0.0% 0.0% 0.00e+00 40 Task_WeightedSumData [region]
+|   |-> 1.21e-01 sec 1.5% 0.0% 0.0% 0.0% 0.00e+00 40 MultiStage_Step [region]
+|       |-> 1.21e-01 sec 1.5% 0.0% 0.0% 0.0% 0.00e+00 40 Driver_Main [region]
+|-> 5.83e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX1] [for]
+|-> 5.81e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX2] [for]
+|-> 5.81e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [advected.fluxX3] [for]
+|-> 5.80e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_advected] [for]
+|-> 5.80e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_advected_sq] [for]
+|-> 5.78e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_12] [for]
+|-> 5.76e-02 sec 0.7% 100.0% 0.0% ------ 64 Kokkos::View::initialization [one_minus_sqrt_one_minus_advected_sq_37] [for]
+|-> 5.31e-02 sec 0.7% 0.0% 0.0% 0.0% 0.00e+00 1345 FillDerived [region]
+|   |-> 5.31e-02 sec 0.7% 0.0% 0.0% 0.0% 0.00e+00 1345 Task_FillDerived [region]
+|       |-> 4.81e-02 sec 0.6% 0.0% 0.0% 0.0% 0.00e+00 65 Mesh::Initialize [region]
+|       |-> 5.02e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|           |-> 5.02e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|-> 5.31e-02 sec 0.7% 0.0% 0.0% 0.0% 0.00e+00 1 Mesh::Initialize [region]
+|-> 5.26e-02 sec 0.7% 0.0% 0.0% 0.0% 0.00e+00 1345 PostFillDerived [region]
+|   |-> 5.26e-02 sec 0.7% 0.0% 0.0% 0.0% 0.00e+00 1345 Task_FillDerived [region]
+|       |-> 4.49e-02 sec 0.6% 0.0% 0.0% 0.0% 0.00e+00 65 Mesh::Initialize [region]
+|       |-> 7.67e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|           |-> 7.67e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|-> 5.06e-02 sec 0.6% 0.0% 0.0% 0.0% 0.00e+00 1345 PreFillDerived [region]
+|   |-> 5.06e-02 sec 0.6% 0.0% 0.0% 0.0% 0.00e+00 1345 Task_FillDerived [region]
+|       |-> 4.52e-02 sec 0.6% 0.0% 0.0% 0.0% 0.00e+00 65 Mesh::Initialize [region]
+|       |-> 5.40e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|           |-> 5.40e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|-> 1.88e-02 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 1664 PackData 4D [region]
+|   |-> 1.88e-02 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 1664 Task_SendBoundaryBuffers_MeshBlockData [region]
+|       |-> 1.88e-02 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 1664 Mesh::Initialize [region]
+|-> 1.73e-02 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 40 Create bndinfo array [region]
+|   |-> 1.60e-02 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 20 Task_SendBoundaryBuffers_MeshData [region]
+|   |   |-> 1.60e-02 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|   |       |-> 1.60e-02 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|   |-> 1.38e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 Task_SetBoundaries_MeshData [region]
+|       |-> 1.38e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|           |-> 1.38e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|-> 1.43e-02 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 1664 UnpackData 4D [region]
+|   |-> 1.43e-02 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 1664 Task_ReceiveAndSetBoundariesWithWait [region]
+|       |-> 1.43e-02 sec 0.2% 0.0% 0.0% 0.0% 0.00e+00 1664 Mesh::Initialize [region]
+|-> 4.97e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 1280 Task_Advection_CalculateFluxes [region]
+|   |-> 4.97e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|       |-> 4.97e-03 sec 0.1% 0.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|-> 3.47e-03 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::destruction [boundary_info] [for]
+|   |-> 3.47e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 40 MultiStage_Step [region]
+|       |-> 3.47e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 40 Driver_Main [region]
+|-> 2.52e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 1] [for]
+|-> 2.52e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 5] [for]
+|-> 2.50e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 0] [for]
+|-> 2.49e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 2] [for]
+|-> 2.48e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 0] [for]
+|-> 2.48e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 4] [for]
+|-> 2.46e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 3] [for]
+|-> 2.46e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 3] [for]
+|-> 2.45e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 1] [for]
+|-> 2.45e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 5] [for]
+|-> 2.45e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [recv buf 4] [for]
+|-> 2.45e-03 sec 0.0% 100.0% 0.0% ------ 64 Kokkos::View::initialization [send buf 2] [for]
+|-> 1.72e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 64 Task_SendBoundaryBuffers_MeshBlockData [region]
+|   |-> 1.72e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 64 Mesh::Initialize [region]
+|-> 1.67e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 1344 Task_ClearBoundary [region]
+|   |-> 1.62e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|   |   |-> 1.62e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|-> 1.61e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 Set complete and/or start sending via MPI [region]
+|   |-> 1.61e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 Task_SendBoundaryBuffers_MeshData [region]
+|       |-> 1.61e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 MultiStage_Step [region]
+|           |-> 1.61e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 20 Driver_Main [region]
+|-> 1.28e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 1344 Task_StartReceiving [region]
+|   |-> 1.27e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|   |   |-> 1.27e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|-> 1.14e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 1280 Task_SendFluxCorrection [region]
+|   |-> 1.14e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 1280 MultiStage_Step [region]
+|       |-> 1.14e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 1280 Driver_Main [region]
+|-> 1.13e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 704 Task_EstimateTimestep [region]
+|   |-> 1.05e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 640 MultiStage_Step [region]
+|   |   |-> 1.05e-03 sec 0.0% 0.0% 0.0% 0.0% 0.00e+00 640 Driver_Main [region]
+|-> 1.01e-03 sec 0.0% 100.0% 0.0% ------ 40 Kokkos::View::initialization [boundary_info] [for]
+|   |-> 1.01e-03 sec 0.0% 100.0% 0.0% 0.0% 0.00e+00 40 Create bndinfo array [region]
+
+KOKKOS HOST SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 1236826.8 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% advected
+  0.1% advected.fluxX1
+  0.1% advected.fluxX2
+  0.1% advected.fluxX3
+  0.1% one_minus_advected
+  0.1% one_minus_advected_sq
+  0.1% one_minus_sqrt_one_minus_advected_sq_12
+  0.1% one_minus_sqrt_one_minus_advected_sq_37
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+  0.1% Driver_Main/MultiStage_Step/advected
+
+KOKKOS CUDA SPACE:
+=================== 
+MAX MEMORY ALLOCATED: 0.0 kB
+ALLOCATIONS AT TIME OF HIGH WATER MARK:
+
+Host process high water mark memory consumption: 1248884 kB
+
+END KOKKOS PROFILING REPORT.
