@@ -1,0 +1,20 @@
+PERFORMANCE LOG
+COMMENT: simple buffer pack packing no numvar=5
+EXTRAARGS: Advection/num_vars=5 Advection/buffer_send_pack=false Advection/buffer_recv_pack=false Advection/buffer_set_pack=false
+
+Currently Loaded Modules:
+  1) GCCcore/9.3.0         5) numactl/2.0.13    9) intel/2020a
+  2) zlib/1.2.11           6) UCX/1.8.0        10) git/2.27.0
+  3) binutils/2.34         7) impi/2019.7.217
+  4) iccifort/2020.1.217   8) imkl/2020.1.217
+
+ 
+
+icpc (ICC) 19.1.1.217 20200306
+Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
+
+### PARTHENON ERROR
+  Message:     ### FATAL ERROR in function [ParameterInput::ModifyFromCmdline]
+Parameter 'num_vars' in block 'Advection' on command line not found
+  File:        /tmp/local/8901015/tmp.SucWTj0Al4/parthenon/src/parameter_input.cpp
+  Line number: 438
